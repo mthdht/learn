@@ -18,6 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware('auth')->group(function() {
-    Route::get('/dashboard', 'HomeController@index');
+    Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 });
 
