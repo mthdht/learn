@@ -17,21 +17,16 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        if (\Auth::user()->role->role == 'user') {
-            return view('dashboard');
+    public function redirection() {
+        if (Auth::user()->role->name != 'admin') {
+            return redirect()->route('dashboard');
         }
-        if (\Auth::user()->role->role == 'editor') {
-            return view('editorDashboard');
+        if (Auth::user()->role->name == 'admin') {
+            return redirect()->route('admin.dashboard');
         }
-        if (\Auth::user()->role->role == 'admin') {
-            return view('adminDashboard');
-        }
+    }
+
+    public function index() {
+        return 'ok';
     }
 }

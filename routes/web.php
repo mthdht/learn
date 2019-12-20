@@ -15,9 +15,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', 'HomeController@redirection');
+
 Auth::routes();
 
-Route::middleware('auth')->group(function() {
-    Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+Route::get('dashboard', 'homeController@index');
+
+
+Route::group([
+    "prefix" => "admin",
+    "middleware" => "admin",
+], function() {
+    Route::name('admin.')->group(function () {
+        Route::get('dashboard', 'AdminController@dashboard')->name('dashboard');
+        Route::resource('cours', 'CourController');
+        Route::resource('exercices', 'CourController');
+        Route::resource('corrections', 'CourController');
+        Route::resource('users', 'CourController');
+    });
+    
 });
 
