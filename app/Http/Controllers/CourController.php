@@ -2,83 +2,97 @@
 
 namespace App\Http\Controllers;
 
-use App\Resource;
-use Illuminate\Http\Request;
+use App\Course;
+use App\Http\Requests\StoreCourse;
+use App\Category;
+use Illuminate\Support\Facades\Auth;
 
 class CourController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Course.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $categories = Category::has('courses')->get();
+        return view('admin.cours.index', ['active' => 'cours', 'categories' => $categories]);
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new Course.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        return view('admin.cours.create', ['active' => 'cours', "categories" => Category::all()]);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created Course in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCourse $request)
     {
-        //
+        $validated = $request->validated();
+
+        $course = Course::create([
+            "title" => $validated['title'],
+            "slug" => $validated['slug'],
+            "content" => $validated['content']
+        ]);
+        $course->category()->associate(Category::find($validated['category']));
+        $course->user()->associate(Auth::user());
+        $course->save();
+        return redirect()->route('admin.cours.index');
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified Course.
      *
-     * @param  \App\Resource  $resource
+     * @param  \App\Course  $Course
      * @return \Illuminate\Http\Response
      */
-    public function show(Resource $resource)
+    public function show(Course $course)
     {
-        //
+        dd($course);
+        //return view('admin.cours.show', ['cour' => $Course]);
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified Course.
      *
-     * @param  \App\Resource  $resource
+     * @param  \App\Course  $Course
      * @return \Illuminate\Http\Response
      */
-    public function edit(Resource $resource)
+    public function edit(Course $course)
     {
-        //
+        return view('admin.cours.edit', ['cour' => $course, "active" => "cours"]);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified Course in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Resource  $resource
+     * @param  \App\Course  $Course
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Resource $resource)
+    public function update(Request $request, Course $course)
     {
         //
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified Course from storage.
      *
-     * @param  \App\Resource  $resource
+     * @param  \App\Course  $Course
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Resource $resource)
+    public function destroy(Course $course)
     {
         //
     }
