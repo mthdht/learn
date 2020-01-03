@@ -61,7 +61,10 @@
     document.getElementById('navigation').addEventListener('click', function(event) {
         console.log(event.target)
     })
+
     
     </script>
+    
+ 
 </body>
 </html>

@@ -30,3 +30,20 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+// set this to however many columns you want
+var col_heights = [], 
+    container = document.getElementById('masonry');
+    console.log(container.children)
+for (var i = 0; i <= 2; i++) {
+    col_heights.push(0);
+}
+for (var i = 0; i < container.children.length; i++) {
+    var order = (i + 1) % 2 || 2;
+    container.children[i].style.order = order;
+    col_heights[order] += parseFloat(container.children[i].scrollHeight);
+    console.log(col_heights)
+}
+console.log("----", col_heights)
+var highest = Math.max.apply(Math, col_heights);
+container.style.height = highest + 50 +'px';
