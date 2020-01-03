@@ -19,7 +19,7 @@ Route::get('/home', 'HomeController@redirection');
 
 Auth::routes();
 
-Route::get('dashboard', 'homeController@index');
+Route::get('dashboard', 'homeController@index')->name('dashboard');
 
 
 Route::group([
@@ -28,7 +28,9 @@ Route::group([
 ], function() {
     Route::name('admin.')->group(function () {
         Route::get('dashboard', 'AdminController@dashboard')->name('dashboard');
-        Route::resource('cours', 'CourController');
+        Route::resource('cours', 'CourController')->parameters([
+            "cours" => "course"
+        ]);
         Route::resource('exercices', 'CourController');
         Route::resource('corrections', 'CourController');
         Route::resource('users', 'CourController');

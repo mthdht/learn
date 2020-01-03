@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <div class="control flex flex-wrap items-center mb-4 flex-grow">
+        <div class="control flex flex-wrap items-center mb-8 flex-grow">
             <label for="content" class="w-32"><i class="far fa-file-alt fa-lg mr-2"></i> Contenu</label>
             <div class="flex-grow h-full">
                 <textarea name="content" id="content" value="" class="px-3 py-2 border rounded w-full h-full"></textarea>
@@ -41,7 +41,9 @@
             <div class="flex-grow">
                 <div class="relative w-64 border rounded">
                     <select name="category" id="category" class="block appearance-none w-full px-4 py-2">
-                        <option value="javascript">Javascript</option>
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}">{{ ucfirst($category->name) }}</option>
+                    @endforeach
                     </select>
                     @error('category')
                     <span class="border-red-500">{{ $message }}</span>
