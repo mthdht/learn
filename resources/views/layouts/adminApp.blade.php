@@ -19,7 +19,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c1d0ab37d6.js" crossorigin="anonymous"></script>
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body class="bg-gray-100 text-gray-800">
     <div id="app" class="h-screen flex flex-col">
         <header class="bg-blue-500 text-white">
             <div class="container mx-auto flex justify-between px-4">
