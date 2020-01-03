@@ -51,7 +51,7 @@
             <a href="{{ route('admin.exercices.index') }}" class="p-4 flex flex-grow md:flex-grow-0 justify-center items-center hover:bg-gray-300 {{ $active == 'exercices' ? 'md:border-l-4 border-b-4 md:border-b-0 border-red-500' : '' }}" title="Exercices"><i class="fas fa-laptop-code fa-2x"></i></a>
             <a href="" class="p-4 flex flex-grow md:flex-grow-0 justify-center items-center hover:bg-gray-300 {{ $active == 'notifications' ? 'md:border-l-4 border-b-4 md:border-b-0 border-red-500' : '' }}" title="Notifications"><i class="far fa-envelope fa-2x"></i></a>
         </section>
-        <section class="content flex-grow p-4 container mx-auto">
+        <section class="content flex-grow p-4 container mx-auto flex flex-col">
             @yield('content')
         </section>
         </main>
