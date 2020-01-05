@@ -58,7 +58,7 @@ try {
     var highest = Math.max.apply(Math, col_heights);
     container.style.height = highest + 50 +'px';
 } catch(error) {
-    
+
 }
 
 
