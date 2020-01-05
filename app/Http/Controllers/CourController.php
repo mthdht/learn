@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Course;
 use App\Http\Requests\StoreCourse;
+use App\Http\Requests\UpdateCourse;
+use Illuminate\Http\Request;
 use App\Category;
 use Illuminate\Support\Facades\Auth;
 
@@ -48,6 +50,7 @@ class CourController extends Controller
         $course->category()->associate(Category::find($validated['category']));
         $course->user()->associate(Auth::user());
         $course->save();
+        $request->session()->flash('status', 'Ajout réussi!');
         return redirect()->route('admin.cours.index');
     }
 
@@ -70,7 +73,7 @@ class CourController extends Controller
      */
     public function edit(Course $course)
     {
-        return view('admin.cours.edit', ['course' => $course, "active" => "cours"]);
+        return view('admin.cours.edit', ['course' => $course, "active" => "cours", "categories" => Category::all()]);
     }
 
     /**
@@ -80,9 +83,11 @@ class CourController extends Controller
      * @param  \App\Course  $Course
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(UpdateCourse $request, Course $course)
     {
-        //
+        $course->update($request->all());
+        $request->session()->flash('status', 'Mise à jour réussi!');
+        return redirect()->route('admin.cours.edit', ['course' => $course->slug]);
     }
 
     /**
@@ -91,9 +96,10 @@ class CourController extends Controller
      * @param  \App\Course  $Course
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Course $course)
+    public function destroy(Request $request, Course $course)
     {
         $course->delete();
+        $request->session()->flash('status', 'Suppression réussi!');
         return redirect()->route('admin.cours.index');
     }
 }

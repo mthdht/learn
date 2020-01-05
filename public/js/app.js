@@ -49477,13 +49477,21 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 
 var app = new Vue({
   el: '#app'
-}); // set this to however many columns you want
+});
+
+try {
+  var alert = document.getElementById('success-status');
+  document.getElementById('close-status').addEventListener('click', function () {
+    alert.style.display = "none";
+  });
+} catch (error) {} // set this to however many columns you want
+
 
 var col_heights = [],
+    col_num = window.innerWidth < 768 ? 1 : 2,
     container = document.getElementById('masonry');
-console.log(container.children);
 
-for (var i = 0; i <= 2; i++) {
+for (var i = 0; i <= col_num; i++) {
   col_heights.push(0);
 }
 
@@ -49491,10 +49499,8 @@ for (var i = 0; i < container.children.length; i++) {
   var order = (i + 1) % 2 || 2;
   container.children[i].style.order = order;
   col_heights[order] += parseFloat(container.children[i].scrollHeight);
-  console.log(col_heights);
 }
 
-console.log("----", col_heights);
 var highest = Math.max.apply(Math, col_heights);
 container.style.height = highest + 50 + 'px';
 

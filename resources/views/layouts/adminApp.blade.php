@@ -44,27 +44,17 @@
         </header>
 
         <main class="flex flex-grow flex-col md:flex-row">
-        <section class="sidebar bg-gray-200 flex md:flex-col text-gray-700 justify-between md:justify-start">
-            <a href="{{ route('admin.dashboard') }}" class="p-4 flex flex-grow md:flex-grow-0 justify-center items-center hover:bg-gray-300 {{ $active == 'dashboard' ? 'md:border-l-4 border-b-4 md:border-b-0 border-red-500' : '' }}" title="Dashboard"><i class="far fa-compass fa-2x"></i></a>
-            <a href="{{ route('admin.users.index') }}" class="p-4 flex flex-grow md:flex-grow-0 justify-center items-center hover:bg-gray-300 {{ $active == 'users' ? 'md:border-l-4 border-b-4 md:border-b-0 border-red-500' : '' }}" title="Utilisateurs"><i class="fas fa-user fa-2x"></i></a>
-            <a href="{{ route('admin.cours.index') }}" class="p-4 flex flex-grow md:flex-grow-0 justify-center items-center hover:bg-gray-300 {{ $active == 'cours' ? 'md:border-l-4 border-b-4 md:border-b-0 border-red-500' : '' }}" title="Cours"><i class="fas fa-book-open fa-2x"></i></a>
-            <a href="{{ route('admin.exercices.index') }}" class="p-4 flex flex-grow md:flex-grow-0 justify-center items-center hover:bg-gray-300 {{ $active == 'exercices' ? 'md:border-l-4 border-b-4 md:border-b-0 border-red-500' : '' }}" title="Exercices"><i class="fas fa-laptop-code fa-2x"></i></a>
-            <a href="" class="p-4 flex flex-grow md:flex-grow-0 justify-center items-center hover:bg-gray-300 {{ $active == 'notifications' ? 'md:border-l-4 border-b-4 md:border-b-0 border-red-500' : '' }}" title="Notifications"><i class="far fa-envelope fa-2x"></i></a>
-        </section>
-        <section class="content flex-grow p-4 container mx-auto flex flex-col">
-            @yield('content')
-        </section>
+            <section class="sidebar bg-gray-200 flex md:flex-col text-gray-700 justify-between md:justify-start">
+                <a href="{{ route('admin.dashboard') }}" class="p-4 flex flex-grow md:flex-grow-0 justify-center items-center hover:bg-gray-300 {{ $active == 'dashboard' ? 'md:border-l-4 border-b-4 md:border-b-0 border-red-500' : '' }}" title="Dashboard"><i class="far fa-compass fa-2x"></i></a>
+                <a href="{{ route('admin.users.index') }}" class="p-4 flex flex-grow md:flex-grow-0 justify-center items-center hover:bg-gray-300 {{ $active == 'users' ? 'md:border-l-4 border-b-4 md:border-b-0 border-red-500' : '' }}" title="Utilisateurs"><i class="fas fa-user fa-2x"></i></a>
+                <a href="{{ route('admin.cours.index') }}" class="p-4 flex flex-grow md:flex-grow-0 justify-center items-center hover:bg-gray-300 {{ $active == 'cours' ? 'md:border-l-4 border-b-4 md:border-b-0 border-red-500' : '' }}" title="Cours"><i class="fas fa-book-open fa-2x"></i></a>
+                <a href="{{ route('admin.exercices.index') }}" class="p-4 flex flex-grow md:flex-grow-0 justify-center items-center hover:bg-gray-300 {{ $active == 'exercices' ? 'md:border-l-4 border-b-4 md:border-b-0 border-red-500' : '' }}" title="Exercices"><i class="fas fa-laptop-code fa-2x"></i></a>
+                <a href="" class="p-4 flex flex-grow md:flex-grow-0 justify-center items-center hover:bg-gray-300 {{ $active == 'notifications' ? 'md:border-l-4 border-b-4 md:border-b-0 border-red-500' : '' }}" title="Notifications"><i class="far fa-envelope fa-2x"></i></a>
+            </section>
+            <section class="content flex-grow p-4 container mx-auto flex flex-col">
+                @yield('content')
+            </section>
         </main>
     </div>
-
-    <script>
-    document.getElementById('navigation').addEventListener('click', function(event) {
-        console.log(event.target)
-    })
-
-    
-    </script>
-    
- 
 </body>
 </html>
