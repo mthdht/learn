@@ -49484,25 +49484,27 @@ try {
   document.getElementById('close-status').addEventListener('click', function () {
     alert.style.display = "none";
   });
-} catch (error) {} // set this to however many columns you want
+} catch (error) {}
 
+try {
+  // set this to however many columns you want
+  var col_heights = [],
+      col_num = window.innerWidth < 768 ? 1 : 2,
+      container = document.getElementById('masonry');
 
-var col_heights = [],
-    col_num = window.innerWidth < 768 ? 1 : 2,
-    container = document.getElementById('masonry');
+  for (var i = 0; i <= col_num; i++) {
+    col_heights.push(0);
+  }
 
-for (var i = 0; i <= col_num; i++) {
-  col_heights.push(0);
-}
+  for (var i = 0; i < container.children.length; i++) {
+    var order = (i + 1) % 2 || 2;
+    container.children[i].style.order = order;
+    col_heights[order] += parseFloat(container.children[i].scrollHeight);
+  }
 
-for (var i = 0; i < container.children.length; i++) {
-  var order = (i + 1) % 2 || 2;
-  container.children[i].style.order = order;
-  col_heights[order] += parseFloat(container.children[i].scrollHeight);
-}
-
-var highest = Math.max.apply(Math, col_heights);
-container.style.height = highest + 50 + 'px';
+  var highest = Math.max.apply(Math, col_heights);
+  container.style.height = highest + 50 + 'px';
+} catch (error) {}
 
 /***/ }),
 

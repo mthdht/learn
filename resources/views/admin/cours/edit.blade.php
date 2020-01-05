@@ -10,11 +10,12 @@
 @endif
 <h3 class="text-2xl mb-8">
     <i class="fas fa-book-open fa-lg mr-4"></i>Editer un cour
-    <form action="{{ route('admin.cours.destroy', ['course' =>$course->slug]) }}" method="post" class="float-right">
+    <form action="{{ route('admin.cours.destroy', ['course' =>$course->slug]) }}" method="post" class="float-right" id="cour-delete">
         @csrf
         @method('DELETE')
-        <button type="submit" class="bg-red-500 rounded px-2 text-white ml-4" title="supprimer"><i class="fas fa-trash-alt"></i></button>
+        <button type="submit" class="bg-red-500 rounded px-2 text-white ml-4" title="supprimer" onclick="event.preventDefault();document.getElementById('modal').style.display = 'flex'"><i class="fas fa-trash-alt"></i></button>
     </form>
+    <a href="{{ route('admin.cours.show', ['course' => $course->slug]) }}" class="bg-blue-500 rounded px-2 text-white float-right" title="Aperçu"><i class="fas fa-eye"></i></a>
 </h3>
 
 <div class="shadow bg-white flex-grow md:mx-0 rounded">
@@ -78,5 +79,18 @@
         </div>
     </form>
 </div>
+
+<section class="modal absolute inset-0 hidden justify-center items-center p-4" style="background: rgba(0,0,0,.6)" id="modal">
+    <div class="content md:w-3/4 lg:w-2/3 xl:w-1/2 rounded p-4 bg-gray-100">
+        <header class="mb-4">
+            <p class="text-2xl">Etes-vous sur de vouloir supprimer ?</p>
+            <p class="text-sm">Toute suppression est définitive!</p>
+        </header>
+        <div class="action flex justify-center">
+            <button class="rounded px-4 py-2 bg-gray-300 hover:bg-gray-400 mr-4" onclick="document.getElementById('modal').style.display = 'none'">Annuler</button>
+            <button class="rounded px-4 py-2 bg-red-400 hover:bg-red-500" onclick="document.getElementById('delete-cour').submit()">Supprimer</button>
+        </div>
+    </div>
+</section>
 
 @endsection
