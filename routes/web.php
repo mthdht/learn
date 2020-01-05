@@ -31,9 +31,9 @@ Route::group([
         Route::resource('cours', 'CourController')->parameters([
             "cours" => "course"
         ]);
-        Route::resource('exercices', 'CourController');
-        Route::resource('corrections', 'CourController');
-        Route::resource('users', 'CourController');
+        Route::resource('utilisateurs', 'UserController')->parameters([
+            "utilisateurs" => "user"
+        ]);
     });
     
 });

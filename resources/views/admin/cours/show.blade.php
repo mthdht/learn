@@ -8,7 +8,7 @@
             {{ $course->title }}
         </div>
         <div class="flex justify-between">
-            <a href="{{ route('admin.cours.edit', ['course' => $course->slug]) }}" class="h-8 w-8 flex justify-center items-center bg-orange-500 rounded mr-4" title="Voir le cour">
+            <a href="{{ route('admin.cours.edit', ['course' => $course->slug]) }}" class="h-8 w-8 flex justify-center items-center bg-orange-500 rounded mr-4" title="Editer le cour">
                 <i class="fas fa-pencil-alt text-white"></i>
             </a>
             <form action="{{ route('admin.cours.destroy', ['course' => $course->slug]) }}" method="post" id="delete-cour">
