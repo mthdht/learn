@@ -55,7 +55,7 @@
 }
 
 .markdown pre code {
-    @apply rounded block bg-gray-300 px-2  py-4;
+    @apply rounded block bg-gray-300 px-2  py-4 overflow-auto;
 }
 
 .markdown blockquote {
