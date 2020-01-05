@@ -59,8 +59,7 @@ class CourController extends Controller
      */
     public function show(Course $course)
     {
-        dd($course);
-        //return view('admin.cours.show', ['cour' => $Course]);
+        return view('admin.cours.show', ['course' => $course, 'active' => "cours"]);
     }
 
     /**
@@ -71,7 +70,7 @@ class CourController extends Controller
      */
     public function edit(Course $course)
     {
-        return view('admin.cours.edit', ['cour' => $course, "active" => "cours"]);
+        return view('admin.cours.edit', ['course' => $course, "active" => "cours"]);
     }
 
     /**
@@ -94,6 +93,7 @@ class CourController extends Controller
      */
     public function destroy(Course $course)
     {
-        //
+        $course->delete();
+        return redirect()->route('admin.cours.index');
     }
 }
