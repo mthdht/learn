@@ -32,7 +32,7 @@
                     <div class="dropdown group flex relative hover:bg-blue-600">
                         <button class="p-2 flex items-center  px-4"><i class="fas fa-user"></i></button>
                         <div class="absolute hidden group-hover:block bg-blue-600 right-0 w-40" style="bottom: -100px;">
-                            <a href="/admin/profile" class="p-4 hover:bg-blue-700 block">Profile</a>
+                            <a href="{{ route('admin.utilisateurs.show', ['user' => $userName]) }}" class="p-4 hover:bg-blue-700 block">Profile</a>
                             <form action="/logout" method="post">
                                 @csrf
                                 <button type="submit" class="p-4 hover:bg-blue-700 w-full text-left">Se déconnecter</button>

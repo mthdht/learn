@@ -18,11 +18,11 @@ class HomeController extends Controller
     }
 
     public function redirection() {
-        if (Auth::user()->role->name != 'admin') {
-            return redirect()->route('dashboard');
-        }
         if (Auth::user()->role->name == 'admin') {
             return redirect()->route('admin.dashboard');
+        }
+        if (Auth::user()->role->name != 'admin') {
+            return redirect()->route('dashboard');
         }
     }
 

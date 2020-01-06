@@ -19,7 +19,7 @@ class CourController extends Controller
     public function index()
     {
         $categories = Category::has('courses')->get();
-        return view('admin.cours.index', ['active' => 'cours', 'categories' => $categories]);
+        return view('admin.cours.index', ['active' => 'cours', 'categories' => $categories, "userName" => Auth::user()->name]);
     }
 
     /**
@@ -29,7 +29,7 @@ class CourController extends Controller
      */
     public function create()
     {
-        return view('admin.cours.create', ['active' => 'cours', "categories" => Category::all()]);
+        return view('admin.cours.create', ['active' => 'cours', "categories" => Category::all(), "userName" => Auth::user()->name]);
     }
 
     /**
@@ -62,7 +62,7 @@ class CourController extends Controller
      */
     public function show(Course $course)
     {
-        return view('admin.cours.show', ['course' => $course, 'active' => "cours"]);
+        return view('admin.cours.show', ['course' => $course, 'active' => "cours", "userName" => Auth::user()->name]);
     }
 
     /**
@@ -73,7 +73,7 @@ class CourController extends Controller
      */
     public function edit(Course $course)
     {
-        return view('admin.cours.edit', ['course' => $course, "active" => "cours", "categories" => Category::all()]);
+        return view('admin.cours.edit', ['course' => $course, "active" => "cours", "categories" => Category::all(), "userName" => Auth::user()->name]);
     }
 
     /**

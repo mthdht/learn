@@ -9,6 +9,7 @@ use App\Http\Requests\StoreUser;
 use App\Http\Requests\UpdateUser;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -20,7 +21,7 @@ class UserController extends Controller
     public function index()
     {
         $roles = Role::all();
-        return view('admin.users.index', ['active' => 'users', 'roles' => $roles]);
+        return view('admin.users.index', ['active' => 'users', 'roles' => $roles, "userName" => Auth::user()->name]);
     }
 
     /**
@@ -31,7 +32,7 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::all();
-        return view('admin.users.create', ['active' => 'users', 'roles' => $roles]);
+        return view('admin.users.create', ['active' => 'users', 'roles' => $roles, "userName" => Auth::user()->name]);
     }
 
     /**
@@ -64,7 +65,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('admin.users.show', ["user" => $user, 'active' => 'users', 'roles' => Role::all()]);
+        return view('admin.users.show', ["user" => $user, 'active' => 'users', 'roles' => Role::all(), "userName" => Auth::user()->name]);
     }
 
     /**
