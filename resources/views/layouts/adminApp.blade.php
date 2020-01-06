@@ -25,21 +25,16 @@
             <div class="container mx-auto flex justify-between px-4">
                 <a href="{{ url('/admin/dashboard') }}" class="text-2xl p-4 hover:bg-blue-600">{{ config('app.name', 'Laravel') }}</a>
 
-                <button class="md:hidden text-xl" id="navigation" data-target="navigation-links">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <nav class="hidden w-full md:w-auto md:flex" id="navigation-links">
-                    <div class="dropdown group flex relative hover:bg-blue-600">
-                        <button class="p-2 flex items-center  px-4"><i class="fas fa-user"></i></button>
-                        <div class="absolute hidden group-hover:block bg-blue-600 right-0 w-40" style="bottom: -100px;">
-                            <a href="{{ route('admin.utilisateurs.show', ['user' => $userName]) }}" class="p-4 hover:bg-blue-700 block">Profile</a>
-                            <form action="/logout" method="post">
-                                @csrf
-                                <button type="submit" class="p-4 hover:bg-blue-700 w-full text-left">Se déconnecter</button>
-                            </form>
-                        </div>
+                <div class="dropdown group flex relative hover:bg-blue-600">
+                    <button class="p-2 flex items-center  px-4"><i class="fas fa-user"></i></button>
+                    <div class="absolute hidden group-hover:block bg-blue-600 right-0 w-40" style="bottom: -100px;">
+                        <a href="{{ route('admin.utilisateurs.show', ['user' => $userName]) }}" class="p-4 hover:bg-blue-700 block">Profile</a>
+                        <form action="/logout" method="post">
+                            @csrf
+                            <button type="submit" class="p-4 hover:bg-blue-700 w-full text-left">Se déconnecter</button>
+                        </form>
                     </div>
-                </nav>
+                </div>
             </div>
         </header>
 
