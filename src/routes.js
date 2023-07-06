@@ -16,4 +16,12 @@ export const routes = [
     name: 'user.bookmarks',
   },
   { path: '/:user/settings', component: Settings, name: 'user.settings' },
+  { path: '/lessons', component: Settings, name: 'lessons.index' },
+  { path: '/lessons/:lesson', component: Settings, name: 'lessons.show' },
+  { path: '/lessons/:lesson/edit', component: Settings, name: 'lessons.edit' },
+  {
+    path: '/lessons/:lesson/create',
+    component: Settings,
+    name: 'lessons.create',
+  },
 ];
