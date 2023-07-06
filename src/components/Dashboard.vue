@@ -1,6 +1,6 @@
 <template>
   <main class="grow flex overflow-hidden">
-    <Sidebar></Sidebar>
+    <Sidebar> </Sidebar>
     <div class="content grow overflow-auto">content goes here</div>
   </main>
 </template>
