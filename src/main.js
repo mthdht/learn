@@ -5,6 +5,10 @@ import App from './App.vue';
 
 import Dashboard from './components/Dashboard.vue';
 import Home from './components/Home.vue';
+import Profile from './components/Profile.vue';
+import UserLessons from './components/UserLessons.vue';
+import UserBookmarks from './components/UserBookmarks.vue';
+import Settings from './components/Settings.vue';
 
 // 2. Define some routes
 // Each route should map to a component.
@@ -12,6 +16,10 @@ import Home from './components/Home.vue';
 const routes = [
   { path: '/', component: Home },
   { path: '/dashboard', component: Dashboard },
+  { path: '/:user', component: Profile },
+  { path: '/:user/lessons', component: UserLessons },
+  { path: '/:user/bookmarks', component: UserBookmarks },
+  { path: '/settings', component: Settings },
 ];
 
 // 3. Create the router instance and pass the `routes` option
