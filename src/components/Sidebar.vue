@@ -4,7 +4,7 @@
       <ul>
         <li>
           <router-link
-            to="/dashboard"
+            :to="{ name: 'user.dashboard', params: { user: 'mthdht' } }"
             class="p-2 border border flex gap-4 items-center"
           >
             <HomeIcon class="w-7 h-7"></HomeIcon>
@@ -13,7 +13,7 @@
         </li>
         <li>
           <router-link
-            to="/mthdht"
+            :to="{ name: 'user.profile', params: { user: 'mthdht' } }"
             class="p-2 border border flex gap-4 items-center"
           >
             <UserIcon class="w-7 h-7"></UserIcon>
@@ -22,7 +22,7 @@
         </li>
         <li>
           <router-link
-            to="/mthdht/lessons"
+            :to="{ name: 'user.lessons', params: { user: 'mthdht' } }"
             class="p-2 border border flex gap-4 items-center"
           >
             <AcademicCapIcon class="w-7 h-7"></AcademicCapIcon>
@@ -31,7 +31,7 @@
         </li>
         <li>
           <router-link
-            to="/mthdht/bookmarks"
+            :to="{ name: 'user.bookmarks', params: { user: 'mthdht' } }"
             class="p-2 border border flex gap-4 items-center"
           >
             <BookmarkSquareIcon class="w-7 h-7"></BookmarkSquareIcon>
@@ -40,7 +40,7 @@
         </li>
         <li>
           <router-link
-            to="/settings"
+            :to="{ name: 'user.settings', params: { user: 'mthdht' } }"
             class="p-2 border border flex gap-4 items-center"
           >
             <Cog6ToothIcon class="w-7 h-7"></Cog6ToothIcon>

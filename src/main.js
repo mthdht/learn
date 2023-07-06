@@ -14,12 +14,16 @@ import Settings from './components/Settings.vue';
 // Each route should map to a component.
 // We'll talk about nested routes later.
 const routes = [
-  { path: '/', component: Home },
-  { path: '/dashboard', component: Dashboard },
-  { path: '/:user', component: Profile },
-  { path: '/:user/lessons', component: UserLessons },
-  { path: '/:user/bookmarks', component: UserBookmarks },
-  { path: '/settings', component: Settings },
+  { path: '/', component: Home, name: 'home' },
+  { path: '/:user/dashboard', component: Dashboard, name: 'user.dashboard' },
+  { path: '/:user/profile', component: Profile, name: 'user.profile' },
+  { path: '/:user/lessons', component: UserLessons, name: 'user.lessons' },
+  {
+    path: '/:user/bookmarks',
+    component: UserBookmarks,
+    name: 'user.bookmarks',
+  },
+  { path: '/:user/settings', component: Settings, name: 'user.settings' },
 ];
 
 // 3. Create the router instance and pass the `routes` option
