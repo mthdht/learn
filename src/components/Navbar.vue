@@ -1,8 +1,6 @@
 <template>
-  <header class="navbar">
-    <div
-      class="navbar-container flex gap-4 container mx-auto font-semibold py-2"
-    >
+  <header class="navbar bg-gradient-to-r from-sky-500 to-purple-500 text-white">
+    <div class="navbar-container flex gap-4 font-semibold p-2">
       <div class="navbar-brand bg-red-500 w-32"></div>
       <nav class="navbar-links flex justify-center gap-4 grow">
         <router-link to="/">Go to Home</router-link>
