@@ -53,9 +53,11 @@
 </template>
 
 <script setup>
-import { HomeIcon } from '@heroicons/vue/24/outline';
-import { UserIcon } from '@heroicons/vue/24/outline';
-import { Cog6ToothIcon } from '@heroicons/vue/24/outline';
-import { AcademicCapIcon } from '@heroicons/vue/24/outline';
-import { BookmarkSquareIcon } from '@heroicons/vue/24/outline';
+import {
+  HomeIcon,
+  UserIcon,
+  Cog6ToothIcon,
+  AcademicCapIcon,
+  BookmarkSquareIcon,
+} from '@heroicons/vue/24/outline';
 </script>
