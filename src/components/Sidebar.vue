@@ -1,5 +1,5 @@
 <template>
-  <aside class="w-48 shrink-0 bg-sky-800 text-slate-200 font-semibold pt-4">
+  <aside class="w-48 shrink-0 bg-sky-700 text-slate-200 font-semibold pt-4">
     <nav>
       <ul>
         <li>
