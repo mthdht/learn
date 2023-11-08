@@ -1,11 +1,11 @@
 <template>
-  <aside class="w-48 shrink-0 bg-red-50 font-semibold">
+  <aside class="w-48 shrink-0 bg-sky-800 text-slate-200 font-semibold pt-4">
     <nav>
       <ul>
         <li>
           <router-link
             :to="{ name: 'user.dashboard', params: { user: 'mthdht' } }"
-            class="p-2 border border flex gap-4 items-center"
+            class="p-2 flex gap-4 items-center hover:text-white"
           >
             <HomeIcon class="w-7 h-7"></HomeIcon>
             <span>Dashboard</span>
@@ -14,7 +14,7 @@
         <li>
           <router-link
             :to="{ name: 'user.profile', params: { user: 'mthdht' } }"
-            class="p-2 border border flex gap-4 items-center"
+            class="p-2 flex gap-4 items-center hover:text-white"
           >
             <UserIcon class="w-7 h-7"></UserIcon>
             <span>Profile</span>
@@ -23,7 +23,7 @@
         <li>
           <router-link
             :to="{ name: 'user.lessons', params: { user: 'mthdht' } }"
-            class="p-2 border border flex gap-4 items-center"
+            class="p-2 flex gap-4 items-center hover:text-white"
           >
             <AcademicCapIcon class="w-7 h-7"></AcademicCapIcon>
             <span>Leçons</span>
@@ -32,7 +32,7 @@
         <li>
           <router-link
             :to="{ name: 'user.bookmarks', params: { user: 'mthdht' } }"
-            class="p-2 border border flex gap-4 items-center"
+            class="p-2 flex gap-4 items-center hover:text-white"
           >
             <BookmarkSquareIcon class="w-7 h-7"></BookmarkSquareIcon>
             <span>Marques pages</span>
@@ -41,7 +41,7 @@
         <li>
           <router-link
             :to="{ name: 'user.settings', params: { user: 'mthdht' } }"
-            class="p-2 border border flex gap-4 items-center"
+            class="p-2 flex gap-4 items-center hover:text-white"
           >
             <Cog6ToothIcon class="w-7 h-7"></Cog6ToothIcon>
             <span>Règlages</span>
