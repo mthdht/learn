@@ -83,7 +83,7 @@ const colors = {
     green: 'from-emerald-500 from-30% to-emerald-400',
     blue: 'from-sky-500 from-30% to-sky-400',
   },
-  action: {
+  badge: {
     gray: 'bg-slate-500',
     red: 'bg-red-500',
     orange: 'bg-orange-500',
@@ -91,7 +91,7 @@ const colors = {
     green: 'bg-emerald-500',
     blue: 'bg-sky-500',
   },
-  badge: {
+  action: {
     gray: 'bg-slate-600',
     red: 'bg-red-600',
     orange: 'bg-orange-600',
