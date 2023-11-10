@@ -3,7 +3,7 @@
     <div class="content">
       <h1 class="font-bold text-xl text-sky-700 py-8">Last popular courses</h1>
 
-      <section class="flex overflow-hidden gap-4 h-40 relative">
+      <section class="flex overflow-hidden gap-4 h-40 relative my-8">
         <div class="carousel-item shrink-0 w-64 bg-red-500">1</div>
         <div class="carousel-item shrink-0 w-64 bg-green-500">2</div>
         <div class="carousel-item shrink-0 w-64 bg-red-500">3</div>
@@ -45,10 +45,13 @@
           <ChevronRightIcon></ChevronRightIcon>
         </div>
       </section>
+
+      <Carousel></Carousel>
     </div>
   </main>
 </template>
 
 <script setup>
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/vue/24/outline';
+import Carousel from './Carousel.vue';
 </script>
