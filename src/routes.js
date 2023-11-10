@@ -4,6 +4,7 @@ import Profile from './components/Profile.vue';
 import UserLessons from './components/UserLessons.vue';
 import UserBookmarks from './components/UserBookmarks.vue';
 import Settings from './components/Settings.vue';
+import Lessons from './components/Lessons.vue';
 
 export const routes = [
   { path: '/', component: Home, name: 'home' },
@@ -16,7 +17,7 @@ export const routes = [
     name: 'user.bookmarks',
   },
   { path: '/:user/settings', component: Settings, name: 'user.settings' },
-  { path: '/lessons', component: Settings, name: 'lessons.index' },
+  { path: '/lessons', component: Lessons, name: 'lessons.index' },
   { path: '/lessons/:lesson', component: Settings, name: 'lessons.show' },
   { path: '/lessons/:lesson/edit', component: Settings, name: 'lessons.edit' },
   {
