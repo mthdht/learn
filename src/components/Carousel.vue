@@ -1,13 +1,6 @@
 <template>
   <section class="flex overflow-hidden gap-4 h-40 relative">
-    <div class="carousel-item shrink-0 w-64 bg-red-500">1</div>
-    <div class="carousel-item shrink-0 w-64 bg-green-500">2</div>
-    <div class="carousel-item shrink-0 w-64 bg-red-500">3</div>
-    <div class="carousel-item shrink-0 w-64 bg-green-500">4</div>
-    <div class="carousel-item shrink-0 w-64 bg-sky-500">5</div>
-    <div class="carousel-item shrink-0 w-64 bg-orange-500">6</div>
-    <div class="carousel-item shrink-0 w-64 bg-red-500">7</div>
-
+    <slot></slot>
     <div
       class="
         prev
@@ -37,6 +30,7 @@
         justify-center
         text-white
       "
+      @click="next"
     >
       <ChevronRightIcon></ChevronRightIcon>
     </div>
@@ -45,4 +39,32 @@
 
 <script setup>
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/vue/24/outline';
+import { computed, useSlots, onMounted, ref } from 'vue';
+
+const props = defineProps({
+  color: {
+    type: String,
+    default: 'gray',
+    validator(value) {
+      // The value must match one of these strings
+      return ['gray', 'red', 'orange', 'yellow', 'green', 'blue'].includes(
+        value
+      );
+    },
+  },
+  visibleItems: {
+    type: Number,
+    default: 5,
+  },
+});
+
+const currentItem = ref(0);
+
+function next() {
+  console.log('next');
+}
+
+onMounted(() => {
+  console.log(useSlots().default());
+});
 </script>
