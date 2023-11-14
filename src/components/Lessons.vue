@@ -3,14 +3,15 @@
     <div class="content">
       <h1 class="font-bold text-xl text-sky-700 py-8">Last popular courses</h1>
 
-      <Carousel>
-        <div class="carousel-item shrink-0 w-64 bg-red-500">1</div>
-        <div class="carousel-item shrink-0 w-64 bg-green-500">2</div>
-        <div class="carousel-item shrink-0 w-64 bg-red-500">3</div>
-        <div class="carousel-item shrink-0 w-64 bg-green-500">4</div>
-        <div class="carousel-item shrink-0 w-64 bg-sky-500">5</div>
-        <div class="carousel-item shrink-0 w-64 bg-orange-500">6</div>
-        <div class="carousel-item shrink-0 w-64 bg-red-500">7</div>
+      <Carousel :visibleItems="2">
+        <CarouselItem>1</CarouselItem>
+        <CarouselItem>2</CarouselItem>
+        <CarouselItem>3</CarouselItem>
+        <CarouselItem>4</CarouselItem>
+        <CarouselItem>5</CarouselItem>
+        <CarouselItem>6</CarouselItem>
+        <CarouselItem>7</CarouselItem>
+        <CarouselItem>7</CarouselItem>
       </Carousel>
     </div>
   </main>
@@ -19,4 +20,5 @@
 <script setup>
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/vue/24/outline';
 import Carousel from './Carousel.vue';
+import CarouselItem from './CarouselItem.vue';
 </script>

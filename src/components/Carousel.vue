@@ -1,6 +1,6 @@
 <template>
-  <section class="flex overflow-hidden gap-4 h-40 relative">
-    <slot></slot>
+  <section class="flex overflow-hidden gap-4 h-40 relative" ref="carousel">
+    <slot :containerSize="carousel"></slot>
     <div
       class="
         prev
@@ -39,7 +39,7 @@
 
 <script setup>
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/vue/24/outline';
-import { computed, useSlots, onMounted, ref } from 'vue';
+import { computed, useSlots, onMounted, ref, provide } from 'vue';
 
 const props = defineProps({
   color: {
@@ -59,12 +59,9 @@ const props = defineProps({
 });
 
 const currentItem = ref(0);
+const carousel = ref('carousel');
 
 function next() {
   console.log('next');
 }
-
-onMounted(() => {
-  console.log(useSlots().default());
-});
 </script>
