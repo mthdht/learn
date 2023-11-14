@@ -8,17 +8,15 @@
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/vue/24/outline';
 import { computed, inject, onMounted, getCurrentInstance } from 'vue';
 
-const props = defineProps({
-  containerSize: Object,
-});
+const instance = getCurrentInstance();
 
 const size = computed(() => {
-  //return 100 / (visibleItems + 0.5) + '%';
-});
-
-onMounted(() => {
-  const instance = getCurrentInstance();
-  console.log(instance.parent.refs.carousel.offsetWidth);
+  return (
+    (instance.parent.refs.carousel.offsetWidth -
+      instance.parent.props.visibleItems * 16) /
+      (instance.parent.props.visibleItems + 0.5) +
+    'px'
+  );
 });
 </script>
 
