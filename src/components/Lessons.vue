@@ -11,7 +11,6 @@
         <CarouselItem>5</CarouselItem>
         <CarouselItem>6</CarouselItem>
         <CarouselItem>7</CarouselItem>
-        <CarouselItem>7</CarouselItem>
       </Carousel>
     </div>
   </main>

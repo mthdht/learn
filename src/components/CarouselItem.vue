@@ -11,6 +11,7 @@ import { computed, inject, onMounted, getCurrentInstance, ref } from 'vue';
 const instance = getCurrentInstance();
 const item = ref();
 const currentItem = inject('currentItem');
+const slideLeft = inject('slideLeft');
 
 const size = computed(() => {
   return (
@@ -25,6 +26,9 @@ const pixelSize = computed(() => {
 });
 
 const translateSize = computed(() => {
+  if (slideLeft.value == 0) {
+    return '-' + (size.value + 16) * (currentItem.value - 0.5) + 'px';
+  }
   return '-' + (size.value + 16) * currentItem.value + 'px';
 });
 </script>

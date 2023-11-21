@@ -15,6 +15,7 @@
         text-white
       "
       v-show="currentItem != 0"
+      @click="prev"
     >
       <ChevronLeftIcon></ChevronLeftIcon>
     </div>
@@ -31,6 +32,7 @@
         justify-center
         text-white
       "
+      v-if="slideLeft != 0"
       @click="next"
     >
       <ChevronRightIcon></ChevronRightIcon>
@@ -40,7 +42,7 @@
 
 <script setup>
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/vue/24/outline';
-import { computed, provide, ref } from 'vue';
+import { computed, provide, ref, useSlots } from 'vue';
 
 const props = defineProps({
   color: {
@@ -61,10 +63,23 @@ const props = defineProps({
 
 const currentItem = ref(0);
 const carousel = ref('carousel');
+const slots = useSlots().default();
 
 provide('currentItem', currentItem);
 
+const slideLeft = computed(() => {
+  return slots.length - props.visibleItems - currentItem.value;
+});
+
+provide('slideLeft', slideLeft);
+
 function next() {
+  console.log(slideLeft.value);
   currentItem.value++;
+  console.log(slideLeft.value);
+}
+
+function prev() {
+  currentItem.value--;
 }
 </script>
