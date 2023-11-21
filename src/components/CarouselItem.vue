@@ -6,10 +6,9 @@
 
 <script setup>
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/vue/24/outline';
-import { computed, inject, onMounted, getCurrentInstance, ref } from 'vue';
+import { computed, inject, getCurrentInstance, ref } from 'vue';
 
 const instance = getCurrentInstance();
-const item = ref();
 const currentItem = inject('currentItem');
 const slideLeft = inject('slideLeft');
 

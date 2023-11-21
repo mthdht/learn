@@ -64,19 +64,15 @@ const props = defineProps({
 const currentItem = ref(0);
 const carousel = ref('carousel');
 const slots = useSlots().default();
-
-provide('currentItem', currentItem);
-
 const slideLeft = computed(() => {
   return slots.length - props.visibleItems - currentItem.value;
 });
 
+provide('currentItem', currentItem);
 provide('slideLeft', slideLeft);
 
 function next() {
-  console.log(slideLeft.value);
   currentItem.value++;
-  console.log(slideLeft.value);
 }
 
 function prev() {
