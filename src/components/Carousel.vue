@@ -1,6 +1,6 @@
 <template>
   <section class="flex overflow-hidden gap-4 h-40 relative" ref="carousel">
-    <slot></slot>
+    <slot class="test"></slot>
     <div
       class="
         prev
@@ -14,6 +14,7 @@
         justify-center
         text-white
       "
+      v-show="currentItem != 0"
     >
       <ChevronLeftIcon></ChevronLeftIcon>
     </div>
@@ -59,9 +60,11 @@ const props = defineProps({
 });
 
 const currentItem = ref(0);
-const carousel = ref('carousel')
+const carousel = ref('carousel');
+
+provide('currentItem', currentItem);
 
 function next() {
-  console.log('next');
+  currentItem.value++;
 }
 </script>
