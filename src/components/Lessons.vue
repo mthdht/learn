@@ -17,7 +17,17 @@
         </Carousel>
       </section>
 
-      <section class="all-courses"></section>
+      <section class="all-courses">
+        <div class="filters-and-search flex gap-4">
+          <select name="category" id="category">
+            <option value="javascript">Javascript</option>
+            <option value="javascript">Javascript</option>
+            <option value="javascript">Javascript</option>
+            <option value="javascript">Javascript</option>
+            <option value="javascript">Javascript</option>
+          </select>
+        </div>
+      </section>
     </div>
   </main>
 </template>
