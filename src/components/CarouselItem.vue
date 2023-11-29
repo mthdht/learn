@@ -11,6 +11,7 @@ import { computed, inject, getCurrentInstance, ref } from 'vue';
 const instance = getCurrentInstance();
 const currentItem = inject('currentItem');
 const slideLeft = inject('slideLeft');
+const aspect = inject('aspect');
 
 const size = computed(() => {
   return (
@@ -37,5 +38,6 @@ const translateSize = computed(() => {
   width: v-bind(pixelSize);
   transform: translateX(v-bind(translateSize));
   transition: transform 1s ease;
+  aspect-ratio: v-bind(aspect);
 }
 </style>

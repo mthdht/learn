@@ -3,7 +3,7 @@
     <div class="content">
       <h1 class="font-bold text-xl text-sky-700 py-8">Last popular courses</h1>
 
-      <Carousel :visibleItems="2">
+      <Carousel :visibleItems="5" aspect="16/9">
         <CarouselItem>1</CarouselItem>
         <CarouselItem>2</CarouselItem>
         <CarouselItem>3</CarouselItem>

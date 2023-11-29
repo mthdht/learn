@@ -1,5 +1,5 @@
 <template>
-  <section class="flex overflow-hidden gap-4 h-40 relative" ref="carousel">
+  <section class="flex overflow-hidden gap-4 relative" ref="carousel">
     <slot class="test"></slot>
     <div
       class="
@@ -32,7 +32,7 @@
         justify-center
         text-white
       "
-      v-if="slideLeft != 0"
+      v-show="slideLeft != 0"
       @click="next"
     >
       <ChevronRightIcon></ChevronRightIcon>
@@ -59,6 +59,10 @@ const props = defineProps({
     type: Number,
     default: 5,
   },
+  aspect: {
+    type: String,
+    default: '4/3',
+  },
 });
 
 const currentItem = ref(0);
@@ -70,6 +74,7 @@ const slideLeft = computed(() => {
 
 provide('currentItem', currentItem);
 provide('slideLeft', slideLeft);
+provide('aspect', props.aspect);
 
 function next() {
   currentItem.value++;
