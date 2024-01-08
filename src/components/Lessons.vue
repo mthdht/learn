@@ -36,4 +36,5 @@
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/vue/24/outline';
 import Carousel from './Carousel.vue';
 import CarouselItem from './CarouselItem.vue';
+import Select from './Select.vue';
 </script>
