@@ -18,7 +18,7 @@
       </section>
 
       <section class="all-courses">
-        <div class="filters-and-search flex gap-4">
+        <div class="filters-and-search flex gap-4 mb-8">
           <select name="category" id="category">
             <option value="javascript">Javascript</option>
             <option value="javascript">Javascript</option>
@@ -27,14 +27,27 @@
             <option value="javascript">Javascript</option>
           </select>
         </div>
+
+        <Select>
+          <template #label> other label</template>
+          <Option>java</Option>
+          <Option>Rust</Option>
+          <Option>Go</Option>
+          <Option>PHP</Option>
+        </Select>
       </section>
     </div>
   </main>
 </template>
 
 <script setup>
-import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/vue/24/outline';
+import {
+  ChevronRightIcon,
+  ChevronLeftIcon,
+  ChevronDownIcon,
+} from '@heroicons/vue/24/outline';
 import Carousel from './Carousel.vue';
 import CarouselItem from './CarouselItem.vue';
 import Select from './Select.vue';
+import Option from './Option.vue';
 </script>
