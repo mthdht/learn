@@ -30,6 +30,57 @@
             <option value="javascript">Javascript</option>
           </select>
         </div>
+
+        <div class="filtered-courses grid grid-cols-4 gap-4">
+          <div class="relative bg-red-500 mb-4">
+            <img class="w-full border aspect-video" />
+          </div>
+          <div class="relative bg-red-500 mb-4">
+            <img class="w-full border aspect-video" />
+          </div>
+          <div class="relative bg-red-500 mb-4">
+            <img class="w-full border aspect-video" />
+          </div>
+          <div class="relative bg-red-500 mb-4">
+            <img class="w-full border aspect-video" />
+          </div>
+          <div class="relative bg-red-500 mb-4">
+            <img class="w-full border aspect-video" />
+          </div>
+          <div class="relative bg-red-500 mb-4">
+            <img class="w-full border aspect-video" />
+          </div>
+          <div class="relative bg-red-500 mb-4">
+            <img class="w-full border aspect-video" />
+          </div>
+          <div class="relative bg-red-500 mb-4">
+            <img class="w-full border aspect-video" />
+          </div>
+        </div>
+
+        <div class="filtered-courses columns-4 gap-4">
+          <div class="relative bg-red-500 mb-4">
+            <img class="w-full border aspect-video" />
+          </div>
+          <div class="relative bg-red-500 mb-4">
+            <img class="w-full border aspect-video" />
+          </div>
+          <div class="relative bg-red-500 mb-4">
+            <img class="w-full border aspect-square" />
+          </div>
+          <div class="relative bg-red-500 mb-4">
+            <img class="w-full border aspect-square" />
+          </div>
+          <div class="relative bg-blue-500 mb-4">
+            <img class="w-full border aspect-video" />
+          </div>
+          <div class="relative bg-red-500 mb-4">
+            <img class="w-full border aspect-square" />
+          </div>
+          <div class="relative bg-blue-500 mb-4">
+            <img class="w-full border aspect-square" />
+          </div>
+        </div>
       </section>
     </div>
   </main>
