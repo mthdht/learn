@@ -18,8 +18,11 @@
       </section>
 
       <section class="all-courses">
-        <div class="filters-and-search flex gap-4 mb-8">
-          <select name="category" id="category">
+        <div class="filters-and-search flex gap-4 my-8 font-semibold">
+          <select name="category" id="category" class="px-4 py-2 rounded">
+            <option value="javascript" disabled selected hidden>
+              choose a theme
+            </option>
             <option value="javascript">Javascript</option>
             <option value="javascript">Javascript</option>
             <option value="javascript">Javascript</option>
@@ -27,14 +30,6 @@
             <option value="javascript">Javascript</option>
           </select>
         </div>
-
-        <Select>
-          <template #label> other label</template>
-          <Option>java</Option>
-          <Option>Rust</Option>
-          <Option>Go</Option>
-          <Option>PHP</Option>
-        </Select>
       </section>
     </div>
   </main>
