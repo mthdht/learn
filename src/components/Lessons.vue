@@ -31,34 +31,11 @@
           </select>
         </div>
 
-        <div class="filtered-courses grid grid-cols-4 gap-4">
-          <div class="relative bg-red-500 mb-4">
-            <img class="w-full border aspect-video" />
-          </div>
-          <div class="relative bg-red-500 mb-4">
-            <img class="w-full border aspect-video" />
-          </div>
-          <div class="relative bg-red-500 mb-4">
-            <img class="w-full border aspect-video" />
-          </div>
-          <div class="relative bg-red-500 mb-4">
-            <img class="w-full border aspect-video" />
-          </div>
-          <div class="relative bg-red-500 mb-4">
-            <img class="w-full border aspect-video" />
-          </div>
-          <div class="relative bg-red-500 mb-4">
-            <img class="w-full border aspect-video" />
-          </div>
-          <div class="relative bg-red-500 mb-4">
-            <img class="w-full border aspect-video" />
-          </div>
-          <div class="relative bg-red-500 mb-4">
-            <img class="w-full border aspect-video" />
-          </div>
+        <div class="filtered-courses grid grid-cols-5 gap-4">
+          <LessonCard></LessonCard>
         </div>
 
-        <div class="filtered-courses columns-4 gap-4">
+        <!--<div class="filtered-courses columns-4 gap-4">
           <div class="relative bg-red-500 mb-4">
             <img class="w-full border aspect-video" />
           </div>
@@ -80,7 +57,7 @@
           <div class="relative bg-blue-500 mb-4">
             <img class="w-full border aspect-square" />
           </div>
-        </div>
+        </div> -->
       </section>
     </div>
   </main>
@@ -96,4 +73,5 @@ import Carousel from './Carousel.vue';
 import CarouselItem from './CarouselItem.vue';
 import Select from './Select.vue';
 import Option from './Option.vue';
+import LessonCard from './LessonCard.vue';
 </script>
