@@ -32,7 +32,13 @@
         </div>
 
         <div class="filtered-courses grid grid-cols-5 gap-4">
-          <LessonCard></LessonCard>
+          <LessonCard
+            img="some link"
+            alt="some alt"
+            level="easy"
+            :time="240"
+            layout="vertical"
+          ></LessonCard>
         </div>
 
         <!--<div class="filtered-courses columns-4 gap-4">

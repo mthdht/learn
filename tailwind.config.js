@@ -6,6 +6,10 @@ export default {
       strokeWidth: {
         3: '3px',
       },
+      scale: {
+        101: '1.01',
+        102: '1.02',
+      },
     },
   },
   plugins: [],
