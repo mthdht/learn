@@ -114,9 +114,9 @@ import {
   ChevronLeftIcon,
   ChevronDownIcon,
 } from '@heroicons/vue/24/outline';
-import Carousel from './Carousel.vue';
-import CarouselItem from './CarouselItem.vue';
-import Select from './Select.vue';
-import Option from './Option.vue';
-import LessonCard from './LessonCard.vue';
+import Carousel from '@/components/Carousel.vue';
+import CarouselItem from '@/components/CarouselItem.vue';
+import Select from '@/components/Select.vue';
+import Option from '@/components/Option.vue';
+import LessonCard from '@/components/LessonCard.vue';
 </script>

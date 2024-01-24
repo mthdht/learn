@@ -32,7 +32,7 @@
 </template>
 
 <script setup>
-import Sidebar from './Sidebar.vue';
-import StatisticsCard from './StatisticsCard.vue';
+import Sidebar from '@/components/Sidebar.vue';
+import StatisticsCard from '@/components/StatisticsCard.vue';
 import { ArrowSmallRightIcon } from '@heroicons/vue/24/outline';
 </script>

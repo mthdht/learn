@@ -1,11 +1,11 @@
-import Dashboard from './components/Dashboard.vue';
-import Home from './components/Home.vue';
-import Profile from './components/Profile.vue';
-import UserLessons from './components/UserLessons.vue';
-import UserBookmarks from './components/UserBookmarks.vue';
-import Settings from './components/Settings.vue';
-import Lessons from './components/Lessons.vue';
-import Lesson from './components/Lesson.vue';
+import Dashboard from './pages/Dashboard.vue';
+import Home from './pages/Home.vue';
+import Profile from './pages/Profile.vue';
+import UserLessons from './pages/UserLessons.vue';
+import UserBookmarks from './pages/UserBookmarks.vue';
+import Settings from './pages/Settings.vue';
+import Lessons from './pages/Lessons.vue';
+import Lesson from './pages/Lesson.vue';
 
 export const routes = [
   { path: '/', component: Home, name: 'home' },

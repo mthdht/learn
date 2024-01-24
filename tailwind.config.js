@@ -2,6 +2,9 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx,vue}'],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {
       strokeWidth: {
         3: '3px',
