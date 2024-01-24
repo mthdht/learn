@@ -20,6 +20,13 @@
           :to="{ name: 'user.dashboard', params: { user: 'mthdht' } }"
           >Go to dashboard</router-link
         >
+        <router-link
+          :to="{
+            name: 'lessons.show',
+            params: { lesson: 'javascript-for-beginner' },
+          }"
+          >Javascript for beginner</router-link
+        >
       </nav>
       <div class="navbar-actions w-24 bg-green-500"></div>
     </div>
