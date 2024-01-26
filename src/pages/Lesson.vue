@@ -1,5 +1,5 @@
 <template>
-  <main class="p-4 bg-sky-50">
+  <main class="p-4 bg-emerald-50">
     <header class="py-8 container">
       <p class="uppercase text-sky-800 font-semibold tracking-tight">
         JAVAscript
@@ -23,12 +23,16 @@
         </div>
       </div>
 
-      <div class="prerequisites-and-goal mt-4">
+      <div class="prerequisites-and-goal mt-6">
         <ul class="list-disc list-inside">
-          <li>Prérequis: Javascript, php, variable</li>
           <li>
-            Objectifs: dfgdfg fgdfgdfgdfg dfdfgdf gdfgdfgdf gdfg aze aze
-            azeazeaze zerergfghjtyut-gzefzefert ertert zerzer
+            <bold class="font-semibold">Prérequis:</bold> Javascript, php,
+            variable
+          </li>
+          <li>
+            <bold class="font-semibold">Objectifs:</bold> dfgdfg fgdfgdfgdfg
+            dfdfgdf gdfgdfgdf gdfg aze aze azeazeaze zerergfghjtyut-gzefzefert
+            ertert zerzer
           </li>
         </ul>
       </div>
