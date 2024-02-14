@@ -1,3 +1,5 @@
-<template>home</template>
+<template>
+  <Layout>home</Layout>
+</template>
 
 <script setup></script>

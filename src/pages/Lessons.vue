@@ -1,4 +1,5 @@
 <template>
+  <Layout>
   <main class="grow container mx-auto p-4">
     <div class="content">
       <section class="last-courses">
@@ -106,6 +107,7 @@
       </section>
     </div>
   </main>
+</Layout>
 </template>
 
 <script setup>

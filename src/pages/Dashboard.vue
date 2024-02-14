@@ -1,34 +1,36 @@
 <template>
-  <main class="grow flex overflow-hidden">
-    <Sidebar> </Sidebar>
-    <div class="content grow overflow-auto p-4 pt-8">
-      <section class="grid md:grid-cols-2 lg:grid-cols-4 gap-2">
-        <StatisticsCard color="red">
-          <template #label>Cours</template>
-          <template #badge>99+</template>
-          <template #action></template>
-        </StatisticsCard>
+  <AdminLayout>
+    <main class="grow flex overflow-hidden">
+      <Sidebar> </Sidebar>
+      <div class="content grow overflow-auto p-4 pt-8">
+        <section class="grid md:grid-cols-2 lg:grid-cols-4 gap-2">
+          <StatisticsCard color="red">
+            <template #label>Cours</template>
+            <template #badge>99+</template>
+            <template #action></template>
+          </StatisticsCard>
 
-        <StatisticsCard color="yellow">
-          <template #label>Cours</template>
-          <template #badge>99+</template>
-          <template #action></template>
-        </StatisticsCard>
+          <StatisticsCard color="yellow">
+            <template #label>Cours</template>
+            <template #badge>99+</template>
+            <template #action></template>
+          </StatisticsCard>
 
-        <StatisticsCard color="green">
-          <template #label>Cours</template>
-          <template #badge>99+</template>
-          <template #action></template>
-        </StatisticsCard>
+          <StatisticsCard color="green">
+            <template #label>Cours</template>
+            <template #badge>99+</template>
+            <template #action></template>
+          </StatisticsCard>
 
-        <StatisticsCard color="blue">
-          <template #label>Cours</template>
-          <template #badge>99+</template>
-          <template #action></template>
-        </StatisticsCard>
-      </section>
-    </div>
-  </main>
+          <StatisticsCard color="blue">
+            <template #label>Cours</template>
+            <template #badge>99+</template>
+            <template #action></template>
+          </StatisticsCard>
+        </section>
+      </div>
+    </main>
+  </AdminLayout>
 </template>
 
 <script setup>
