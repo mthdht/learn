@@ -4,8 +4,8 @@ import Profile from './pages/Profile.vue';
 import UserLessons from './pages/UserLessons.vue';
 import UserBookmarks from './pages/UserBookmarks.vue';
 import Settings from './pages/Settings.vue';
-import Lessons from './pages/Lessons.vue';
-import Lesson from './pages/Lesson.vue';
+import Lessons from './pages/lessons/Index.vue';
+import Lesson from './pages/lessons/Show.vue';
 
 export const routes = [
   { path: '/', component: Home, name: 'home' },
