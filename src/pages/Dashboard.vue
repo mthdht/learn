@@ -26,12 +26,11 @@
       </StatisticsCard>
     </section>
 
-    <div class="bg-red-500 h-screen"></div>
+    <div class="bg-red-500 h-64"></div>
   </AdminLayout>
 </template>
 
 <script setup>
-import Sidebar from '@/components/Sidebar.vue';
 import StatisticsCard from '@/components/StatisticsCard.vue';
 import { ArrowSmallRightIcon } from '@heroicons/vue/24/outline';
 </script>

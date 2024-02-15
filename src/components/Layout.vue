@@ -1,6 +1,8 @@
 <template>
   <Navbar />
-  <slot></slot>
+  <main class="grow">
+    <slot></slot>
+  </main>
 </template>
 
 <script setup>

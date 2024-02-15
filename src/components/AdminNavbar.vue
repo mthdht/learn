@@ -4,7 +4,7 @@
       navbar
       bg-gradient-to-r
       from-sky-800
-      to-teal-600
+      to-sky-600
       text-white
       sticky
       top-0

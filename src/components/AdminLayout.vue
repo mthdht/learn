@@ -1,8 +1,8 @@
 <template>
   <AdminNavbar />
-  <div class="content">
-    <Sidebar />
-    <main class="pl-48">
+  <div class="content grow">
+    <AdminSidebar />
+    <main class="ml-20 p-8">
       <slot></slot>
     </main>
   </div>
@@ -10,5 +10,5 @@
 
 <script setup>
 import AdminNavbar from '@/components/AdminNavbar.vue';
-import Sidebar from '@/components/Sidebar.vue';
+import AdminSidebar from '@/components/AdminSidebar.vue';
 </script>
