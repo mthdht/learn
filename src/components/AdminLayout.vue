@@ -2,7 +2,7 @@
   <AdminNavbar />
   <div class="content grow">
     <AdminSidebar />
-    <main class="ml-20 p-8">
+    <main class="ml-18 p-8">
       <slot></slot>
     </main>
   </div>
