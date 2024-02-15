@@ -5,7 +5,7 @@
       bg-sky-900
       text-slate-200
       font-semibold
-      w-20
+      w-18
       pt-8
       fixed
       bottom-0
@@ -33,7 +33,7 @@
               text-slate-300
             "
           >
-            <UserIcon class="w-7 h-7"></UserIcon>
+            <UserIcon class="w-6 h-6"></UserIcon>
           </router-link>
         </li>
         <li>

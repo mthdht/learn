@@ -13,6 +13,9 @@ export default {
         101: '1.01',
         102: '1.02',
       },
+      width: {
+        18: '4.5rem',
+      },
     },
   },
   plugins: [],
