@@ -1,8 +1,8 @@
 <template>
   <AdminNavbar />
-  <div class="content grow max-h-full overflow-auto">
+  <div class="content grow max-h-full overflow-auto flex">
     <AdminSidebar />
-    <main class="ml-18 h-full max-h-full overflow-auto">
+    <main class="ml-18 h-full max-h-full overflow-auto grow">
       <slot></slot>
     </main>
   </div>

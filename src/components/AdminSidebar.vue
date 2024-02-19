@@ -1,17 +1,5 @@
 <template>
-  <aside
-    class="
-      shrink-0
-      bg-sky-900
-      text-slate-200
-      font-semibold
-      w-18
-      pt-8
-      fixed
-      bottom-0
-      top-14
-    "
-  >
+  <aside class="shrink-0 bg-sky-900 text-slate-200 font-semibold w-18 pt-8">
     <nav>
       <ul class="flex flex-col gap-2 items-center">
         <li>
