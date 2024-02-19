@@ -3,8 +3,8 @@
     class="
       navbar
       bg-gradient-to-r
-      from-sky-800
-      to-sky-600
+      from-cyan-800
+      to-cyan-600
       text-white
       sticky
       top-0

@@ -1,11 +1,11 @@
 <template>
-  <aside class="shrink-0 bg-sky-900 text-slate-200 font-semibold w-18 pt-8">
+  <aside class="shrink-0 bg-cyan-900 text-slate-200 font-semibold w-18 pt-8">
     <nav>
       <ul class="flex flex-col gap-2 items-center">
         <li>
           <router-link
             :to="{ name: 'user.dashboard', params: { user: 'mthdht' } }"
-            class="p-3 flex hover:text-white bg-sky-800 text-white rounded"
+            class="p-3 flex hover:text-white bg-cyan-800 text-white rounded"
           >
             <HomeIcon class="w-6 h-6"></HomeIcon>
           </router-link>
@@ -16,7 +16,7 @@
             class="
               p-3
               flex
-              hover:text-white hover:bg-sky-800
+              hover:text-white hover:bg-cyan-800
               rounded
               text-slate-300
             "
@@ -30,7 +30,7 @@
             class="
               p-3
               flex
-              hover:text-white hover:bg-sky-800
+              hover:text-white hover:bg-cyan-800
               rounded
               text-slate-300
             "
@@ -44,7 +44,7 @@
             class="
               p-3
               flex
-              hover:text-white hover:bg-sky-800
+              hover:text-white hover:bg-cyan-800
               rounded
               text-slate-300
             "
@@ -58,7 +58,7 @@
             class="
               p-3
               flex
-              hover:text-white hover:bg-sky-800
+              hover:text-white hover:bg-cyan-800
               rounded
               text-slate-300
             "

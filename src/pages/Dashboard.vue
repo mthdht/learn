@@ -26,8 +26,6 @@
           <template #action></template>
         </StatisticsCard>
       </section>
-
-      <div class="bg-red-500 h-screen"></div>
     </div>
   </AdminLayout>
 </template>
