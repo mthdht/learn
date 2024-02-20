@@ -3,7 +3,7 @@
     class="
       shrink-0
       bg-cyan-900
-      text-slate-200
+      text-slate-300
       font-semibold
       w-18
       pt-8
@@ -39,14 +39,7 @@
         <li>
           <router-link
             :to="{ name: 'user.profile', params: { user: 'mthdht' } }"
-            class="
-              p-3
-              flex
-              gap-4
-              hover:text-white hover:bg-cyan-800
-              rounded
-              text-slate-300
-            "
+            class="p-3 flex gap-4 hover:text-white hover:bg-cyan-800 rounded"
           >
             <UserIcon class="w-6 h-6"></UserIcon>
             <transition name="fade">
@@ -57,14 +50,7 @@
         <li>
           <router-link
             :to="{ name: 'user.lessons', params: { user: 'mthdht' } }"
-            class="
-              p-3
-              flex
-              gap-4
-              hover:text-white hover:bg-cyan-800
-              rounded
-              text-slate-300
-            "
+            class="p-3 flex gap-4 hover:text-white hover:bg-cyan-800 rounded"
           >
             <AcademicCapIcon class="w-6 h-6"></AcademicCapIcon>
             <transition name="fade">
@@ -75,14 +61,7 @@
         <li>
           <router-link
             :to="{ name: 'user.bookmarks', params: { user: 'mthdht' } }"
-            class="
-              p-3
-              flex
-              gap-4
-              hover:text-white hover:bg-cyan-800
-              rounded
-              text-slate-300
-            "
+            class="p-3 flex gap-4 hover:text-white hover:bg-cyan-800 rounded"
           >
             <BookmarkSquareIcon class="w67 h-6"></BookmarkSquareIcon>
             <transition name="fade">
@@ -93,14 +72,7 @@
         <li>
           <router-link
             :to="{ name: 'user.settings', params: { user: 'mthdht' } }"
-            class="
-              p-3
-              flex
-              gap-4
-              hover:text-white hover:bg-cyan-800
-              rounded
-              text-slate-300
-            "
+            class="p-3 flex gap-4 hover:text-white hover:bg-cyan-800 rounded"
           >
             <Cog6ToothIcon class="w-6 h-6"></Cog6ToothIcon>
             <transition name="fade">
@@ -115,7 +87,6 @@
           flex
           hover:text-white hover:bg-cyan-700
           bg-cyan-800
-          text-white
           rounded
           absolute
           bottom-12
