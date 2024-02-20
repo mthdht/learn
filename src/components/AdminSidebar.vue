@@ -29,7 +29,7 @@
               rounded
             "
           >
-            <HomeIcon class="w-6 h-6"></HomeIcon>
+            <HomeIcon class="w-6 h-6 stroke-2"></HomeIcon>
 
             <transition name="fade">
               <span v-show="isOpen">Dashboard</span>
@@ -41,7 +41,7 @@
             :to="{ name: 'user.profile', params: { user: 'mthdht' } }"
             class="p-3 flex gap-4 hover:text-white hover:bg-cyan-800 rounded"
           >
-            <UserIcon class="w-6 h-6"></UserIcon>
+            <UserIcon class="w-6 h-6 stroke-2"></UserIcon>
             <transition name="fade">
               <span v-show="isOpen">Profile</span>
             </transition>
@@ -52,7 +52,7 @@
             :to="{ name: 'user.lessons', params: { user: 'mthdht' } }"
             class="p-3 flex gap-4 hover:text-white hover:bg-cyan-800 rounded"
           >
-            <AcademicCapIcon class="w-6 h-6"></AcademicCapIcon>
+            <AcademicCapIcon class="w-6 h-6 stroke-2"></AcademicCapIcon>
             <transition name="fade">
               <span v-show="isOpen">My lessons</span>
             </transition>
@@ -63,7 +63,7 @@
             :to="{ name: 'user.bookmarks', params: { user: 'mthdht' } }"
             class="p-3 flex gap-4 hover:text-white hover:bg-cyan-800 rounded"
           >
-            <BookmarkSquareIcon class="w67 h-6"></BookmarkSquareIcon>
+            <BookmarkSquareIcon class="w-6 h-6 stroke-2"></BookmarkSquareIcon>
             <transition name="fade">
               <span v-show="isOpen">Bookmarks</span>
             </transition>
@@ -74,7 +74,7 @@
             :to="{ name: 'user.settings', params: { user: 'mthdht' } }"
             class="p-3 flex gap-4 hover:text-white hover:bg-cyan-800 rounded"
           >
-            <Cog6ToothIcon class="w-6 h-6"></Cog6ToothIcon>
+            <Cog6ToothIcon class="w-6 h-6 stroke-2"></Cog6ToothIcon>
             <transition name="fade">
               <span v-show="isOpen">Settings</span>
             </transition>
@@ -97,7 +97,7 @@
         <transition name="quickFade" mode="out-in">
           <component
             :is="isOpen ? ChevronLeftIcon : ChevronRightIcon"
-            class="h-6 w-6"
+            class="h-6 w-6 stroke-3"
           ></component>
         </transition>
       </button>
