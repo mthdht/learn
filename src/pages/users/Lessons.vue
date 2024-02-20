@@ -2,7 +2,7 @@
   <AdminLayout>
     <section class="p-8">
       <div class="flex justify-between">
-        <h2>Mes cours</h2>
+        <h2 class="text-3xl font-semibold">Mes cours</h2>
         <div>
           <select>
             <option>Publié</option>
