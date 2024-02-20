@@ -17,68 +17,50 @@
     <nav>
       <ul class="flex flex-col gap-2">
         <li>
-          <router-link
+          <SidebarLink
             :to="{ name: 'user.dashboard', params: { user: 'mthdht' } }"
-            class="
-              p-3
-              flex
-              gap-4
-              hover:text-white
-              bg-cyan-800
-              text-white
-              rounded
-            "
+            label="Dashboard"
+            :open="isOpen"
+            active
           >
             <HomeIcon class="w-6 h-6 stroke-2"></HomeIcon>
-
-            <transition name="fade">
-              <span v-show="isOpen">Dashboard</span>
-            </transition>
-          </router-link>
+          </SidebarLink>
         </li>
         <li>
-          <router-link
+          <SidebarLink
             :to="{ name: 'user.profile', params: { user: 'mthdht' } }"
-            class="p-3 flex gap-4 hover:text-white hover:bg-cyan-800 rounded"
+            label="Profile"
+            :open="isOpen"
           >
             <UserIcon class="w-6 h-6 stroke-2"></UserIcon>
-            <transition name="fade">
-              <span v-show="isOpen">Profile</span>
-            </transition>
-          </router-link>
+          </SidebarLink>
         </li>
         <li>
-          <router-link
+          <SidebarLink
             :to="{ name: 'user.lessons', params: { user: 'mthdht' } }"
-            class="p-3 flex gap-4 hover:text-white hover:bg-cyan-800 rounded"
+            label="My lessons"
+            :open="isOpen"
           >
             <AcademicCapIcon class="w-6 h-6 stroke-2"></AcademicCapIcon>
-            <transition name="fade">
-              <span v-show="isOpen">My lessons</span>
-            </transition>
-          </router-link>
+          </SidebarLink>
         </li>
         <li>
-          <router-link
+          <SidebarLink
             :to="{ name: 'user.bookmarks', params: { user: 'mthdht' } }"
-            class="p-3 flex gap-4 hover:text-white hover:bg-cyan-800 rounded"
+            label="bookmarks"
+            :open="isOpen"
           >
             <BookmarkSquareIcon class="w-6 h-6 stroke-2"></BookmarkSquareIcon>
-            <transition name="fade">
-              <span v-show="isOpen">Bookmarks</span>
-            </transition>
-          </router-link>
+          </SidebarLink>
         </li>
         <li>
-          <router-link
+          <SidebarLink
             :to="{ name: 'user.settings', params: { user: 'mthdht' } }"
-            class="p-3 flex gap-4 hover:text-white hover:bg-cyan-800 rounded"
+            label="Settings"
+            :open="isOpen"
           >
             <Cog6ToothIcon class="w-6 h-6 stroke-2"></Cog6ToothIcon>
-            <transition name="fade">
-              <span v-show="isOpen">Settings</span>
-            </transition>
-          </router-link>
+          </SidebarLink>
         </li>
       </ul>
       <button
@@ -116,6 +98,8 @@ import {
   ChevronRightIcon,
   ChevronLeftIcon,
 } from '@heroicons/vue/24/outline';
+
+import SidebarLink from '@/components/SidebarLink.vue';
 
 const isOpen = ref(false);
 </script>
