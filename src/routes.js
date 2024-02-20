@@ -1,10 +1,10 @@
-import Dashboard from './pages/Dashboard.vue';
+import Dashboard from './pages/users/Dashboard.vue';
 import Home from './pages/Home.vue';
-import Profile from './pages/Profile.vue';
-import UserLessons from './pages/UserLessons.vue';
-import UserLesson from './pages/UserLesson.vue';
-import UserBookmarks from './pages/UserBookmarks.vue';
-import Settings from './pages/Settings.vue';
+import Profile from './pages/users/Profile.vue';
+import UserLessons from './pages/users/Lessons.vue';
+import UserLesson from './pages/users/Lesson.vue';
+import UserBookmarks from './pages/users/Bookmarks.vue';
+import Settings from './pages/users/Settings.vue';
 import Lessons from './pages/lessons/Index.vue';
 import Lesson from './pages/lessons/Show.vue';
 
