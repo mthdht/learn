@@ -88,7 +88,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, provide } from 'vue';
 import {
   HomeIcon,
   UserIcon,
@@ -102,6 +102,8 @@ import {
 import SidebarLink from '@/components/SidebarLink.vue';
 
 const isOpen = ref(false);
+
+provide('isOpen', isOpen);
 </script>
 
 <style scoped>

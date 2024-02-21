@@ -16,7 +16,9 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, inject } from 'vue';
+
+const isOpen = inject('isOpen');
 
 const props = defineProps({
   to: Object,
@@ -26,7 +28,7 @@ const props = defineProps({
 });
 
 const isExpended = computed(() => {
-  return props.open ? 'opacity-100' : 'opacity-0';
+  return isOpen.value ? 'opacity-100' : 'opacity-0';
 });
 </script>
 
