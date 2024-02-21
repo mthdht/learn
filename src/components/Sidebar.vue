@@ -33,7 +33,7 @@
         </li>
         <li>
           <router-link
-            :to="{ name: 'user.lessons', params: { user: 'mthdht' } }"
+            :to="{ name: 'user.lessons.index', params: { user: 'mthdht' } }"
             class="p-2 flex gap-4 items-center hover:text-white"
           >
             <AcademicCapIcon class="w-7 h-7"></AcademicCapIcon>

@@ -37,7 +37,7 @@
         </li>
         <li>
           <SidebarLink
-            :to="{ name: 'user.lessons', params: { user: 'mthdht' } }"
+            :to="{ name: 'user.lessons.index', params: { user: 'mthdht' } }"
             label="My lessons"
             :open="isOpen"
           >

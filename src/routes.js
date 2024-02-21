@@ -3,6 +3,7 @@ import Home from './pages/Home.vue';
 import Profile from './pages/users/Profile.vue';
 import UserLessons from './pages/users/Lessons.vue';
 import UserLesson from './pages/users/Lesson.vue';
+import UserLessonCreate from './pages/users/LessonCreate.vue';
 import UserBookmarks from './pages/users/Bookmarks.vue';
 import Settings from './pages/users/Settings.vue';
 import Lessons from './pages/lessons/Index.vue';
@@ -12,11 +13,20 @@ export const routes = [
   { path: '/', component: Home, name: 'home' },
   { path: '/:user/dashboard', component: Dashboard, name: 'user.dashboard' },
   { path: '/:user/profile', component: Profile, name: 'user.profile' },
-  { path: '/:user/lessons', component: UserLessons, name: 'user.lessons' },
+  {
+    path: '/:user/lessons',
+    component: UserLessons,
+    name: 'user.lessons.index',
+  },
+  {
+    path: '/:user/lessons/create',
+    component: UserLessonCreate,
+    name: 'user.lessons.create',
+  },
   {
     path: '/:user/lessons/:lesson',
     component: UserLesson,
-    name: 'user.lesson',
+    name: 'user.lessons.show',
   },
   {
     path: '/:user/bookmarks',
