@@ -4,19 +4,29 @@
     class="p-3 flex gap-4 hover:text-white hover:bg-cyan-800 rounded"
     :class="{ 'bg-cyan-800': props.active }"
   >
-    <slot></slot>
-    <transition name="fade">
-      <span v-show="props.open">{{ props.label }}</span>
-    </transition>
+    <span class="shrink-0">
+      <slot></slot>
+    </span>
+    <span
+      :class="isExpended"
+      class="transition-[opacity] duration-1000 whitespace-nowrap"
+      >{{ props.label }}</span
+    >
   </router-link>
 </template>
 
 <script setup>
+import { computed } from 'vue';
+
 const props = defineProps({
   to: Object,
   label: String,
   open: Boolean,
   active: Boolean,
+});
+
+const isExpended = computed(() => {
+  return props.open ? 'opacity-100' : 'opacity-0';
 });
 </script>
 
