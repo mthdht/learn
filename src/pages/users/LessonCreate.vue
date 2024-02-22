@@ -15,9 +15,7 @@
         </div>
       </section>
       <section class="grow max-h-full">
-        <Tiptap v-model="content" />
-
-        {{ content }}
+        <MdEditor v-model="text" language="en-US" class="h-full" />
       </section>
       <section
         class="w-96 bg-slate-100 max-h-full p-8 font-semibold border-l-4"
@@ -47,7 +45,17 @@
 
 <script setup>
 import { ref } from 'vue';
-import Tiptap from '@/components/Tiptap.vue';
+
+import { MdEditor } from 'md-editor-v3';
+import 'md-editor-v3/lib/style.css';
+
+const text = ref('# Hello Editor');
 
 const content = ref();
 </script>
+
+<style scoped>
+.md-editor {
+  height: 100%;
+}
+</style>
