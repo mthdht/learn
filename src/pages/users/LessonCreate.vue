@@ -14,7 +14,11 @@
           </p>
         </div>
       </section>
-      <section class="grow max-h-full"></section>
+      <section class="grow max-h-full">
+        <Tiptap v-model="content" />
+
+        {{ content }}
+      </section>
       <section
         class="w-96 bg-slate-100 max-h-full p-8 font-semibold border-l-4"
       >
@@ -43,4 +47,7 @@
 
 <script setup>
 import { ref } from 'vue';
+import Tiptap from '@/components/Tiptap.vue';
+
+const content = ref();
 </script>
