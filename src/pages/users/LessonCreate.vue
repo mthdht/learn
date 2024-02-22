@@ -15,7 +15,7 @@
         </div>
       </section>
       <section class="grow max-h-full">
-        <MdEditor v-model="text" language="en-US" class="h-full" />
+        <MdEditor v-model="text" language="fr-FR" class="h-full" />
       </section>
       <section
         class="w-96 bg-slate-100 max-h-full p-8 font-semibold border-l-4"
@@ -46,8 +46,16 @@
 <script setup>
 import { ref } from 'vue';
 
-import { MdEditor } from 'md-editor-v3';
+import { MdEditor, config } from 'md-editor-v3';
+import FR_FR from '@vavt/cm-extension/dist/locale/fr-FR';
 import 'md-editor-v3/lib/style.css';
+config({
+  editorConfig: {
+    languageUserDefined: {
+      'fr-FR': FR_FR,
+    },
+  },
+});
 
 const text = ref('# Hello Editor');
 
