@@ -15,7 +15,12 @@
         </div>
       </section>
       <section class="grow max-h-full">
-        <MdEditor v-model="text" language="fr-FR" class="h-full" />
+        <MdEditor
+          v-model="text"
+          language="fr-FR"
+          class="h-full"
+          :toolbarsExclude="['github']"
+        />
       </section>
       <section
         class="w-96 bg-slate-100 max-h-full p-8 font-semibold border-l-4"
