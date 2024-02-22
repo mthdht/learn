@@ -26,14 +26,17 @@
         class="w-96 bg-slate-100 max-h-full p-8 font-semibold border-l-4"
       >
         <h3 class="text-xl mb-8">Customization</h3>
-        <div class="flex flex-col gap-2 mb-4">
+        <div class="flex flex-col gap-2 mb-8">
           <label for="url">Url de la page:</label>
           <input
             type="text"
             class="px-3 py-2 rounded-md shadow"
             id="url"
             placeholder="le-titre-de-ma-page"
+            v-model="slug"
           />
+          <p>url finale:</p>
+          <p>https://exemple.com/{{ slug }}</p>
         </div>
 
         <div class="flex flex-col gap-2 mb-4">
@@ -63,8 +66,7 @@ config({
 });
 
 const text = ref('# Hello Editor');
-
-const content = ref();
+const slug = ref();
 </script>
 
 <style scoped>
