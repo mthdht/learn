@@ -4,7 +4,7 @@
       <section
         class="w-64 bg-slate-50 h-full max-h-full overflow-auto divide-y"
       >
-        <div class="px-3 py-2" v-for="n in 15">
+        <div class="px-3 py-3 hover:bg-slate-200" v-for="n in 15">
           <h4 class="flex justify-between items-center">
             <span class="font-semibold">Titre de l'article</span>
             <span class="text-xs italic">Le 17/08/2024</span>
