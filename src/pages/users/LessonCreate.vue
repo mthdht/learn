@@ -2,7 +2,15 @@
   <AdminLayout>
     <div class="flex h-full">
       <section
-        class="w-64 bg-slate-50 h-full max-h-full overflow-auto divide-y"
+        class="
+          w-64
+          bg-slate-50
+          h-full
+          max-h-full
+          overflow-auto
+          divide-y
+          shrink-0
+        "
       >
         <div class="px-3 py-3 hover:bg-slate-200" v-for="n in 15">
           <h4 class="flex justify-between items-center">
@@ -20,6 +28,7 @@
           language="fr-FR"
           class="h-full"
           :toolbarsExclude="['github']"
+          @onSave="onSave"
         />
       </section>
       <section
@@ -67,6 +76,14 @@ config({
 
 const text = ref('# Hello Editor');
 const slug = ref();
+
+const onSave = (v, h) => {
+  console.log(v);
+
+  h.then((html) => {
+    console.log(html);
+  });
+};
 </script>
 
 <style scoped>
