@@ -4,6 +4,7 @@ import Profile from './pages/users/Profile.vue';
 import UserLessons from './pages/users/Lessons.vue';
 import UserLesson from './pages/users/Lesson.vue';
 import UserLessonCreate from './pages/users/LessonCreate.vue';
+import UserLessonPreview from './pages/users/LessonPreview.vue';
 import UserBookmarks from './pages/users/Bookmarks.vue';
 import Settings from './pages/users/Settings.vue';
 import Lessons from './pages/lessons/Index.vue';
@@ -24,10 +25,17 @@ export const routes = [
     name: 'user.lessons.create',
   },
   {
+    path: '/:user/lessons/preview/:lesson',
+    component: UserLessonPreview,
+    name: 'user.lessons.preview',
+    props: true,
+  },
+  {
     path: '/:user/lessons/:lesson',
     component: UserLesson,
     name: 'user.lessons.show',
   },
+
   {
     path: '/:user/bookmarks',
     component: UserBookmarks,

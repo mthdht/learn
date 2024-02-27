@@ -34,7 +34,12 @@
       <section
         class="w-96 bg-slate-100 max-h-full p-8 font-semibold border-l-4"
       >
-        <router-link to="/lessons/test">
+        <router-link
+          :to="{
+            name: 'user.lessons.preview',
+            params: { username: 'mthdht', lesson: 'test', content: 'ok' },
+          }"
+        >
           <button class="float-right rounded px-3 py-2 bg-sky-700 text-white">
             Prévisualiser
           </button>
@@ -66,7 +71,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, provide } from 'vue';
 
 import { MdEditor, config } from 'md-editor-v3';
 import FR_FR from '@vavt/cm-extension/dist/locale/fr-FR';
@@ -81,6 +86,8 @@ config({
 
 const text = ref('# Hello Editor');
 const slug = ref();
+
+provide('lessonPreviewContent', text);
 
 const onSave = (v, h) => {
   console.log(v);
