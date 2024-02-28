@@ -59,17 +59,13 @@ import { ref, onMounted } from 'vue';
 import { MdPreview, MdCatalog } from 'md-editor-v3';
 import 'md-editor-v3/lib/preview.css';
 
-const props = defineProps({
-  content: String,
-  user: String,
-  lesson: String,
-});
+const props = defineProps(['content']);
 const id = 'preview-only';
 
 const route = useRoute();
-console.log(route.params);
-console.log(props);
+
 onMounted(() => {
+  console.log(route.params);
   console.log(props);
 });
 const scrollElement = document.documentElement;
