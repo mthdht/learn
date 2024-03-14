@@ -62,16 +62,42 @@
             placeholder="le-titre-de-ma-page"
             v-model="slug"
           />
-          <p>url finale:</p>
-          <p>https://exemple.com/{{ slug }}</p>
+          <p class="text-slate-500 text-sm">https://exemple.com/{{ slug }}</p>
         </div>
 
-        <div class="flex flex-col gap-2 mb-4">
+        <div class="flex flex-col gap-2 mb-8">
           <label for="url">Category:</label>
           <select class="px-3 py-2 rounded bg-white shadow">
             <option class="bg-slate-100">Javascript</option>
             <option class="bg-slate-100">PHP</option>
           </select>
+        </div>
+
+        <div class="flex flex-col gap-2 mb-8">
+          <label for="url">Objectifs:</label>
+          <ul class="list-disc list-inside">
+            <li
+              v-for="(objectif, index) in objectifs"
+              key="index"
+              class="text-slate-500"
+            >
+              {{ objectif }}
+            </li>
+          </ul>
+          <div class="flex gap-2">
+            <input
+              type="text"
+              v-model="objectif"
+              class="px-3 py-2 rounded-md shadow grow"
+              placeholder="connaître le théoreme de pythagore"
+            />
+            <button
+              class="bg-emerald-400 text-white rounded px-3 py-2"
+              @click="addGoal"
+            >
+              New
+            </button>
+          </div>
         </div>
       </section>
     </div>
@@ -93,9 +119,18 @@ config({
   },
 });
 
+const scrollElement = document.documentElement;
+
 const text = ref('# Hello Editor');
 const slug = ref();
 const id = 'preview-only';
+const objectif = ref();
+const objectifs = ref([]);
+
+function addGoal() {
+  objectifs.value.push(objectif.value);
+  objectif.value = '';
+}
 
 const onSave = (v, h) => {
   console.log(v);
