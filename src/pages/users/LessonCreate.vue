@@ -1,13 +1,16 @@
 <template>
   <AdminLayout>
-    <section v-show="isPreview" class="content flex gap-4 container relative">
+    <section
+      v-show="isPreview"
+      class="content flex gap-4 container relative h-full"
+    >
       <button
         @click="isPreview = !isPreview"
         class="absolute top-4 left-6 z-50"
       >
         &lt-- retour
       </button>
-      <section class="w-full default-them flex">
+      <section class="w-full default-theme flex bg-slate-50">
         <MdPreview :editorId="id" :modelValue="text" class="w-3/4" />
         <MdCatalog :editorId="id" :scrollElement="scrollElement" class="grow" />
       </section>
@@ -89,11 +92,38 @@
               type="text"
               v-model="objectif"
               class="px-3 py-2 rounded-md shadow grow"
-              placeholder="connaître le théoreme de pythagore"
+              placeholder="apprendre le calcul de coordonnées"
             />
             <button
               class="bg-emerald-400 text-white rounded px-3 py-2"
               @click="addGoal"
+            >
+              New
+            </button>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2 mb-8">
+          <label for="url">Prérequis:</label>
+          <ul class="list-disc list-inside">
+            <li
+              v-for="(prerequisite, index) in prerequisites"
+              key="index"
+              class="text-slate-500"
+            >
+              {{ prerequisite }}
+            </li>
+          </ul>
+          <div class="flex gap-2">
+            <input
+              type="text"
+              v-model="prerequisite"
+              class="px-3 py-2 rounded-md shadow grow"
+              placeholder="connaître le théoreme de pythagore"
+            />
+            <button
+              class="bg-emerald-400 text-white rounded px-3 py-2"
+              @click="addPrerequisite"
             >
               New
             </button>
@@ -126,10 +156,17 @@ const slug = ref();
 const id = 'preview-only';
 const objectif = ref();
 const objectifs = ref([]);
+const prerequisite = ref();
+const prerequisites = ref([]);
 
 function addGoal() {
   objectifs.value.push(objectif.value);
   objectif.value = '';
+}
+
+function addPrerequisite() {
+  prerequisites.value.push(prerequisite.value);
+  prerequisite.value = '';
 }
 
 const onSave = (v, h) => {
@@ -144,7 +181,8 @@ const isPreview = ref(false);
 </script>
 
 <style scoped>
-.md-editor {
-  height: 100%;
+.md-editor,
+.md-editor-preview {
+  @apply bg-slate-50;
 }
 </style>
