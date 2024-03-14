@@ -15,6 +15,7 @@
         <MdCatalog :editorId="id" :scrollElement="scrollElement" class="grow" />
       </section>
     </section>
+
     <div v-show="!isPreview" class="flex h-full">
       <section
         class="
@@ -37,6 +38,7 @@
           </p>
         </div>
       </section>
+
       <section class="grow max-h-full">
         <MdEditor
           v-model="text"
@@ -46,6 +48,7 @@
           @onSave="onSave"
         />
       </section>
+
       <section
         class="w-96 bg-slate-100 max-h-full p-8 font-semibold border-l-4"
       >
@@ -82,9 +85,23 @@
             <li
               v-for="(objectif, index) in objectifs"
               key="index"
-              class="text-slate-500"
+              class="text-slate-500 flex gap-2"
             >
-              {{ objectif }}
+              <span class="grow" v-show="!isEdit">{{ objectif }}</span>
+              <div v-show="isEdit" class="grow flex gap-2">
+                <input
+                  type="text"
+                  v-model="objectifs[index]"
+                  class="px-3 py-2 rounded-md shadow grow"
+                />
+                <button class="bg-emerald-400 text-white rounded px-3 py-2">
+                  ok
+                </button>
+              </div>
+              <div v-show="!isEdit" class="flex gap-2">
+                <span @click="edit(key)">edit</span>
+                <span @click="delete key">suppr</span>
+              </div>
             </li>
           </ul>
           <div class="flex gap-2">
@@ -158,6 +175,7 @@ const objectif = ref();
 const objectifs = ref([]);
 const prerequisite = ref();
 const prerequisites = ref([]);
+const isEdit = ref(false);
 
 function addGoal() {
   objectifs.value.push(objectif.value);
@@ -167,6 +185,11 @@ function addGoal() {
 function addPrerequisite() {
   prerequisites.value.push(prerequisite.value);
   prerequisite.value = '';
+}
+
+function edit(key) {
+  console.log('edit');
+  isEdit.value = true;
 }
 
 const onSave = (v, h) => {
@@ -184,5 +207,6 @@ const isPreview = ref(false);
 .md-editor,
 .md-editor-preview {
   @apply bg-slate-50;
+  height: 100%;
 }
 </style>
