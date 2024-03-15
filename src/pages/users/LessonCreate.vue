@@ -85,22 +85,36 @@
             <li
               v-for="(objectif, index) in objectifs"
               key="index"
-              class="text-slate-500 flex gap-2"
+              class="flex items-center text-slate-500 gap-2"
             >
-              <span class="grow" v-show="!isEdit">{{ objectif }}</span>
-              <div v-show="isEdit" class="grow flex gap-2">
+              -
+              <span class="grow" v-show="isEdit != index">{{ objectif }}</span>
+              <div v-show="isEdit == index" class="grow flex gap-2">
                 <input
                   type="text"
                   v-model="objectifs[index]"
                   class="px-3 py-2 rounded-md shadow grow"
                 />
-                <button class="bg-emerald-400 text-white rounded px-3 py-2">
+                <button
+                  @click="isEdit = null"
+                  class="bg-emerald-400 text-white rounded px-3 py-2"
+                >
                   ok
                 </button>
               </div>
-              <div v-show="!isEdit" class="flex gap-2">
-                <span @click="edit(key)">edit</span>
-                <span @click="delete key">suppr</span>
+              <div v-show="isEdit != index" class="flex gap-2">
+                <button
+                  class="p-1 border rounded hover:bg-slate-200"
+                  @click="edit(index)"
+                >
+                  <PencilIcon class="w-5 h-5 text-slate-700"></PencilIcon>
+                </button>
+                <button
+                  class="p-1 border rounded hover:bg-slate-200"
+                  @click="erase(index)"
+                >
+                  <TrashIcon class="w-5 h-5 text-slate-700"></TrashIcon>
+                </button>
               </div>
             </li>
           </ul>
@@ -155,6 +169,8 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
+import { PencilIcon, TrashIcon } from '@heroicons/vue/24/outline';
+
 import { MdEditor, config, MdPreview, MdCatalog } from 'md-editor-v3';
 import FR_FR from '@vavt/cm-extension/dist/locale/fr-FR';
 import 'md-editor-v3/lib/style.css';
@@ -175,7 +191,7 @@ const objectif = ref();
 const objectifs = ref([]);
 const prerequisite = ref();
 const prerequisites = ref([]);
-const isEdit = ref(false);
+const isEdit = ref();
 
 function addGoal() {
   objectifs.value.push(objectif.value);
@@ -187,9 +203,8 @@ function addPrerequisite() {
   prerequisite.value = '';
 }
 
-function edit(key) {
-  console.log('edit');
-  isEdit.value = true;
+function edit(index) {
+  isEdit.value = index;
 }
 
 const onSave = (v, h) => {
