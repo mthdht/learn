@@ -207,6 +207,10 @@ function edit(index) {
   isEdit.value = index;
 }
 
+function erase(index) {
+  objectifs.value.splice(index, 1);
+}
+
 const onSave = (v, h) => {
   console.log(v);
 
