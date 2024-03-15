@@ -129,7 +129,7 @@
               class="bg-emerald-400 text-white rounded px-3 py-2"
               @click="addGoal"
             >
-              New
+              <PlusIcon class="w-5 h-5"></PlusIcon>
             </button>
           </div>
         </div>
@@ -169,7 +169,7 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { PencilIcon, TrashIcon } from '@heroicons/vue/24/outline';
+import { PencilIcon, TrashIcon, PlusIcon } from '@heroicons/vue/24/outline';
 
 import { MdEditor, config, MdPreview, MdCatalog } from 'md-editor-v3';
 import FR_FR from '@vavt/cm-extension/dist/locale/fr-FR';
