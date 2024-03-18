@@ -1,16 +1,53 @@
 <template>
   <AdminLayout>
-    <section
-      v-show="isPreview"
-      class="lesson-preview content flex gap-4 container relative h-full"
-    >
+    <section v-show="isPreview" class="lesson-preview content relative h-full">
       <button
         @click="isPreview = !isPreview"
         class="absolute top-4 left-6 z-50"
       >
         &lt-- retour
       </button>
-      <section class="w-full default-theme flex bg-slate-50">
+      <header class="bg-emerald-50">
+        <div class="py-12 container">
+          <p class="uppercase text-sky-800 font-semibold tracking-tight">
+            JAVAscript
+          </p>
+          <h2 class="text-4xl font-semibold mb-8">titre de la leçon</h2>
+
+          <p class="text-slate-600 mb-4">
+            Python est très demandé et accessible pour les débutants. Apprenez à
+            coder avec Python pour écrire des programmes simples mais puissants,
+            et pour automatiser les tâches.
+          </p>
+
+          <div class="infos flex gap-4 mt-4">
+            <div class="flex gap-2 items-center">
+              <ClockIcon class="h-5 w-5"></ClockIcon>
+              <span>1 hour</span>
+            </div>
+            <div class="flex gap-2 items-center">
+              <ChartBarIcon class="h-5 w-5"></ChartBarIcon>
+              <span>easy</span>
+            </div>
+          </div>
+
+          <div class="prerequisites-and-goal mt-6">
+            <p class="font-semibold mb-2"><bold>Objectifs:</bold></p>
+            <ul class="list-disc list-inside mb-8 ml-4">
+              <li v-for="(objectif, index) in objectifs" :key="index">
+                {{ objectif }}
+              </li>
+            </ul>
+            <p class="font-semibold mb-2"><bold>Prérequis:</bold></p>
+            <ul class="list-disc list-inside ml-4">
+              <li v-for="(prerequisite, index) in prerequisites" :key="index">
+                {{ prerequisite }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <section class="w-full default-theme flex bg-slate-50 container">
         <MdPreview :editorId="id" :modelValue="text" class="w-3/4" />
         <MdCatalog :editorId="id" :scrollElement="scrollElement" class="grow" />
       </section>

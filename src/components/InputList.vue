@@ -4,7 +4,7 @@
     <ul class="list-disc list-inside">
       <li
         v-for="(item, index) in items"
-        key="index"
+        :key="index"
         class="flex items-center text-slate-500 gap-2"
       >
         -
