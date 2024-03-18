@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-2 mb-8">
+  <div class="flex flex-col gap-2">
     <label for="url">{{ props.label }}:</label>
     <ul class="list-disc list-inside">
       <li

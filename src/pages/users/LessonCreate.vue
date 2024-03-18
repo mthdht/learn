@@ -59,16 +59,19 @@
           p-8
           font-semibold
           border-l-4
+          relative
+          flex flex-col
+          gap-8
         "
       >
         <button
           @click="isPreview = !isPreview"
-          class="float-right rounded px-3 py-2 bg-sky-700 text-white"
+          class="rounded px-3 py-2 bg-sky-600 text-white self-end"
         >
           Prévisualiser
         </button>
-        <h3 class="text-xl mb-8">Customization</h3>
-        <div class="flex flex-col gap-2 mb-8">
+        <h3 class="text-xl">Customization</h3>
+        <div class="flex flex-col gap-2">
           <label for="url">Url de la page:</label>
           <input
             type="text"
@@ -80,7 +83,7 @@
           <p class="text-slate-500 text-sm">https://exemple.com/{{ slug }}</p>
         </div>
 
-        <div class="flex flex-col gap-2 mb-8">
+        <div class="flex flex-col gap-2">
           <label for="url">Category:</label>
           <select class="px-3 py-2 rounded bg-white shadow">
             <option class="bg-slate-100">Javascript</option>
@@ -97,6 +100,26 @@
           placeholder="théorème de pythagore"
           v-model="prerequisites"
         ></InputList>
+
+        <div class="flex justify-around bottom-8 grow items-end">
+          <button
+            class="
+              px-3
+              py-2
+              bg-emerald-500
+              text-white
+              hover:bg-emerald-600
+              rounded
+            "
+          >
+            Save
+          </button>
+          <button
+            class="px-3 py-2 bg-sky-600 text-white hover:bg-sky-700 rounded"
+          >
+            Publish
+          </button>
+        </div>
       </section>
     </div>
   </AdminLayout>
