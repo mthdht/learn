@@ -2,7 +2,7 @@
   <AdminLayout>
     <section
       v-show="isPreview"
-      class="content flex gap-4 container relative h-full"
+      class="lesson-preview content flex gap-4 container relative h-full"
     >
       <button
         @click="isPreview = !isPreview"
@@ -19,6 +19,7 @@
     <div v-show="!isPreview" class="flex h-full">
       <section
         class="
+          lessons-list
           w-64
           bg-slate-50
           h-full
@@ -50,7 +51,15 @@
       </section>
 
       <section
-        class="w-96 bg-slate-100 max-h-full p-8 font-semibold border-l-4"
+        class="
+          lesson-options
+          w-96
+          bg-slate-100
+          max-h-full
+          p-8
+          font-semibold
+          border-l-4
+        "
       >
         <button
           @click="isPreview = !isPreview"
@@ -78,88 +87,16 @@
             <option class="bg-slate-100">PHP</option>
           </select>
         </div>
-
-        <div class="flex flex-col gap-2 mb-8">
-          <label for="url">Objectifs:</label>
-          <ul class="list-disc list-inside">
-            <li
-              v-for="(objectif, index) in objectifs"
-              key="index"
-              class="flex items-center text-slate-500 gap-2"
-            >
-              -
-              <span class="grow" v-show="isEdit != index">{{ objectif }}</span>
-              <div v-show="isEdit == index" class="grow flex gap-2">
-                <input
-                  type="text"
-                  v-model="objectifs[index]"
-                  class="px-3 py-2 rounded-md shadow grow"
-                />
-                <button
-                  @click="isEdit = null"
-                  class="bg-emerald-400 text-white rounded px-3 py-2"
-                >
-                  ok
-                </button>
-              </div>
-              <div v-show="isEdit != index" class="flex gap-2">
-                <button
-                  class="p-1 border rounded hover:bg-slate-200"
-                  @click="edit(index)"
-                >
-                  <PencilIcon class="w-5 h-5 text-slate-700"></PencilIcon>
-                </button>
-                <button
-                  class="p-1 border rounded hover:bg-slate-200"
-                  @click="erase(index)"
-                >
-                  <TrashIcon class="w-5 h-5 text-slate-700"></TrashIcon>
-                </button>
-              </div>
-            </li>
-          </ul>
-          <div class="flex gap-2">
-            <input
-              type="text"
-              v-model="objectif"
-              class="px-3 py-2 rounded-md shadow grow"
-              placeholder="apprendre le calcul de coordonnées"
-            />
-            <button
-              class="bg-emerald-400 text-white rounded px-3 py-2"
-              @click="addGoal"
-            >
-              <PlusIcon class="w-5 h-5"></PlusIcon>
-            </button>
-          </div>
-        </div>
-
-        <div class="flex flex-col gap-2 mb-8">
-          <label for="url">Prérequis:</label>
-          <ul class="list-disc list-inside">
-            <li
-              v-for="(prerequisite, index) in prerequisites"
-              key="index"
-              class="text-slate-500"
-            >
-              {{ prerequisite }}
-            </li>
-          </ul>
-          <div class="flex gap-2">
-            <input
-              type="text"
-              v-model="prerequisite"
-              class="px-3 py-2 rounded-md shadow grow"
-              placeholder="connaître le théoreme de pythagore"
-            />
-            <button
-              class="bg-emerald-400 text-white rounded px-3 py-2"
-              @click="addPrerequisite"
-            >
-              New
-            </button>
-          </div>
-        </div>
+        <InputList
+          label="objectifs"
+          placeholder="connaître les coordonnées..."
+          v-model="objectifs"
+        ></InputList>
+        <InputList
+          label="prérequis"
+          placeholder="théorème de pythagore"
+          v-model="prerequisites"
+        ></InputList>
       </section>
     </div>
   </AdminLayout>
@@ -169,7 +106,7 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
-import { PencilIcon, TrashIcon, PlusIcon } from '@heroicons/vue/24/outline';
+import InputList from '@/components/InputList.vue';
 
 import { MdEditor, config, MdPreview, MdCatalog } from 'md-editor-v3';
 import FR_FR from '@vavt/cm-extension/dist/locale/fr-FR';
@@ -187,29 +124,8 @@ const scrollElement = document.documentElement;
 const text = ref('# Hello Editor');
 const slug = ref();
 const id = 'preview-only';
-const objectif = ref();
 const objectifs = ref([]);
-const prerequisite = ref();
 const prerequisites = ref([]);
-const isEdit = ref();
-
-function addGoal() {
-  objectifs.value.push(objectif.value);
-  objectif.value = '';
-}
-
-function addPrerequisite() {
-  prerequisites.value.push(prerequisite.value);
-  prerequisite.value = '';
-}
-
-function edit(index) {
-  isEdit.value = index;
-}
-
-function erase(index) {
-  objectifs.value.splice(index, 1);
-}
 
 const onSave = (v, h) => {
   console.log(v);
