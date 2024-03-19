@@ -82,7 +82,7 @@
           v-model="text"
           language="fr-FR"
           class="h-full"
-          :toolbarsExclude="['github']"
+          :toolbarsExclude="['github', 'save']"
           @onSave="onSave"
         />
       </section>
@@ -92,7 +92,9 @@
           lesson-options
           w-96
           bg-slate-100
+          h-full
           max-h-full
+          overflow-auto
           p-8
           font-semibold
           border-l-4
