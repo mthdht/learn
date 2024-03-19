@@ -15,9 +15,7 @@
           <h2 class="text-4xl font-semibold mb-8">{{ title }}</h2>
 
           <p class="text-slate-600 mb-4 w-1/2">
-            Python est très demandé et accessible pour les débutants. Apprenez à
-            coder avec Python pour écrire des programmes simples mais puissants,
-            et pour automatiser les tâches.
+            {{ description }}
           </p>
 
           <div class="infos flex gap-4 mt-4">
@@ -180,6 +178,7 @@
 <script setup>
 import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
+import { ClockIcon, ChartBarIcon } from '@heroicons/vue/24/outline';
 
 import InputList from '@/components/InputList.vue';
 
@@ -195,10 +194,11 @@ config({
 });
 
 const scrollElement = document.documentElement;
+const id = 'preview-only';
 const editor = ref();
 const text = ref('# Hello Editor');
 const slug = ref();
-const id = 'preview-only';
+const description = ref();
 const objectifs = ref([]);
 const prerequisites = ref([]);
 
