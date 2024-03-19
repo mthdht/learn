@@ -106,7 +106,7 @@
       >
         <button
           @click="isPreview = !isPreview"
-          class="rounded px-3 py-2 bg-sky-600 text-white self-end"
+          class="absolute rounded px-3 py-2 bg-sky-600 text-white self-end"
         >
           Prévisualiser
         </button>
