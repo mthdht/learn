@@ -8,13 +8,13 @@
         &lt-- retour
       </button>
       <header class="bg-emerald-50">
-        <div class="py-12 container">
+        <div class="py-12 max-w-7xl mx-auto px-5">
           <p class="uppercase text-sky-800 font-semibold tracking-tight">
             JAVAscript
           </p>
-          <h2 class="text-4xl font-semibold mb-8">titre de la leçon</h2>
+          <h2 class="text-4xl font-semibold mb-8">{{ title }}</h2>
 
-          <p class="text-slate-600 mb-4">
+          <p class="text-slate-600 mb-4 w-1/2">
             Python est très demandé et accessible pour les débutants. Apprenez à
             coder avec Python pour écrire des programmes simples mais puissants,
             et pour automatiser les tâches.
@@ -47,9 +47,8 @@
           </div>
         </div>
       </header>
-      <section class="w-full default-theme flex bg-slate-50 container">
-        {{ text }}
-        <MdPreview :editorId="id" :modelValue="text" class="w-3/4" />
+      <section class="default-theme flex bg-slate-50 max-w-7xl mx-auto">
+        <MdPreview :editorId="id" :modelValue="content" class="w-3/4" />
         <MdCatalog :editorId="id" :scrollElement="scrollElement" class="grow" />
       </section>
     </section>
@@ -168,7 +167,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
 
 import InputList from '@/components/InputList.vue';
@@ -192,6 +191,17 @@ const id = 'preview-only';
 const objectifs = ref([]);
 const prerequisites = ref([]);
 
+const title = computed(() => {
+  return text.value.split('\n')[0].substring(2);
+});
+
+const content = computed(() => {
+  const lesson = text.value.split('\n');
+  lesson.splice(0, 1);
+
+  return lesson.join('\n');
+});
+
 const onSave = (v, h) => {
   console.log(v);
 
@@ -201,7 +211,9 @@ const onSave = (v, h) => {
 };
 
 const save = () => {
-  editor.value?.triggerSave();
+  console.log(content.value);
+  //console.log(content.value);
+  //editor.value?.triggerSave();
 };
 
 const isPreview = ref(false);
