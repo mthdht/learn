@@ -48,6 +48,7 @@
         </div>
       </header>
       <section class="w-full default-theme flex bg-slate-50 container">
+        {{ text }}
         <MdPreview :editorId="id" :modelValue="text" class="w-3/4" />
         <MdCatalog :editorId="id" :scrollElement="scrollElement" class="grow" />
       </section>
@@ -84,6 +85,7 @@
           class="h-full"
           :toolbarsExclude="['github', 'save']"
           @onSave="onSave"
+          ref="editor"
         />
       </section>
 
@@ -150,6 +152,7 @@
               hover:bg-emerald-600
               rounded
             "
+            @click="save"
           >
             Save
           </button>
@@ -182,7 +185,7 @@ config({
 });
 
 const scrollElement = document.documentElement;
-
+const editor = ref();
 const text = ref('# Hello Editor');
 const slug = ref();
 const id = 'preview-only';
@@ -195,6 +198,10 @@ const onSave = (v, h) => {
   h.then((html) => {
     console.log(html);
   });
+};
+
+const save = () => {
+  editor.value?.triggerSave();
 };
 
 const isPreview = ref(false);
