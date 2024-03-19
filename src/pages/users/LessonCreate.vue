@@ -124,6 +124,17 @@
         </div>
 
         <div class="flex flex-col gap-2">
+          <label for="description">Description de la leçon:</label>
+          <textarea
+            type="text"
+            class="px-3 py-2 rounded-md shadow"
+            id="description"
+            placeholder="Python est très demandé et accessible pour les débutants.."
+            v-model="description"
+          ></textarea>
+        </div>
+
+        <div class="flex flex-col gap-2">
           <label for="url">Category:</label>
           <select class="px-3 py-2 rounded bg-white shadow">
             <option class="bg-slate-100">Javascript</option>
