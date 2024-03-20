@@ -3,7 +3,7 @@
     <label for="url">{{ props.label }}:</label>
     <ul class="list-disc list-inside">
       <li
-        v-for="(item, index) in items"
+        v-for="(item, index) in model"
         :key="index"
         class="flex items-center text-slate-500 gap-2"
       >
@@ -12,7 +12,7 @@
         <div v-show="isEdit == index" class="grow flex gap-2">
           <input
             type="text"
-            v-model="items[index]"
+            v-model="model[index]"
             class="px-3 py-2 rounded-md shadow grow"
           />
           <button
@@ -60,20 +60,16 @@ import { PencilIcon, TrashIcon, PlusIcon } from '@heroicons/vue/24/outline';
 const props = defineProps({
   label: String,
   placeholder: String,
-  modelValue: {
-    type: Array,
-  },
 });
-const emit = defineEmits(['update:modelValue']);
+
+const model = defineModel();
 
 const item = ref();
-const items = ref(props.modelValue);
 
 const isEdit = ref();
 
 function add() {
-  items.value.push(item.value);
-  emit('update:modelValue', items);
+  model.value.push(item.value);
   item.value = '';
 }
 
@@ -82,6 +78,6 @@ function edit(index) {
 }
 
 function erase(index) {
-  items.value.splice(index, 1);
+  model.value.splice(index, 1);
 }
 </script>
