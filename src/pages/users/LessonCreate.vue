@@ -10,7 +10,7 @@
       <header class="bg-emerald-50">
         <div class="py-12 max-w-7xl mx-auto px-5">
           <p class="uppercase text-sky-800 font-semibold tracking-tight">
-            JAVAscript
+            {{ category }}
           </p>
           <h2 class="text-4xl font-semibold mb-8">{{ title }}</h2>
 
@@ -134,7 +134,7 @@
 
         <div class="flex flex-col gap-2">
           <label for="url">Category:</label>
-          <select class="px-3 py-2 rounded bg-white shadow">
+          <select class="px-3 py-2 rounded bg-white shadow" v-model="category">
             <option class="bg-slate-100">Javascript</option>
             <option class="bg-slate-100">PHP</option>
           </select>
@@ -199,6 +199,7 @@ const editor = ref();
 const text = ref('# Hello Editor');
 const slug = ref();
 const description = ref();
+const category = ref('Javascript');
 const objectifs = ref([]);
 const prerequisites = ref([]);
 
