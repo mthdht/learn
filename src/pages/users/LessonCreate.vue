@@ -293,4 +293,8 @@ const isPreview = ref(false);
   @apply bg-slate-50;
   height: 100%;
 }
+
+* {
+  scrollbar-gutter: stable both-edges;
+}
 </style>
