@@ -86,10 +86,8 @@
         />
       </section>
 
-      <section
+      <div
         class="
-          lesson-options
-          w-96
           bg-slate-100
           h-full
           max-h-full
@@ -97,60 +95,108 @@
           p-8
           font-semibold
           border-l-4
-          relative
+          w-96
           flex flex-col
-          gap-8
+          gap-4
         "
       >
-        <button
-          @click="isPreview = !isPreview"
-          class="absolute rounded px-3 py-2 bg-sky-600 text-white self-end"
+        <div class="flex justify-center mb-4">
+          <div class="p-2 flex gap-2 bg-slate-200 rounded">
+            <button
+              class="rounded px-3 py-2 bg-slate-500 text-white"
+              :class="[settings == 'options' ? 'bg-slate-600' : '']"
+              @click="settings = 'options'"
+            >
+              settings
+            </button>
+            <button
+              class="rounded px-3 py-2 bg-slate-500 text-white"
+              :class="[settings == 'media' ? 'bg-slate-600' : '']"
+              @click="settings = 'media'"
+            >
+              media
+            </button>
+          </div>
+        </div>
+        <section
+          class="lesson-options relative flex flex-col gap-8 grow"
+          v-show="settings == 'options'"
         >
-          Prévisualiser
-        </button>
-        <h3 class="text-xl">Customization</h3>
-        <div class="flex flex-col gap-2">
-          <label for="url">Url de la page:</label>
-          <input
-            type="text"
-            class="px-3 py-2 rounded-md shadow"
-            id="url"
-            placeholder="le-titre-de-ma-page"
-            v-model="slug"
-          />
-          <p class="text-slate-500 text-sm">https://exemple.com/{{ slug }}</p>
-        </div>
+          <button
+            @click="isPreview = !isPreview"
+            class="absolute rounded px-3 py-2 bg-sky-600 text-white self-end"
+          >
+            Prévisualiser
+          </button>
+          <h3 class="text-xl">Customization</h3>
+          <div class="flex flex-col gap-2">
+            <label for="url">Url de la page:</label>
+            <input
+              type="text"
+              class="px-3 py-2 rounded-md shadow"
+              id="url"
+              placeholder="le-titre-de-ma-page"
+              v-model="slug"
+            />
+            <p class="text-slate-500 text-sm">https://exemple.com/{{ slug }}</p>
+          </div>
 
-        <div class="flex flex-col gap-2">
-          <label for="description">Description de la leçon:</label>
-          <textarea
-            type="text"
-            class="px-3 py-2 rounded-md shadow"
-            id="description"
-            placeholder="Python est très demandé et accessible pour les débutants.."
-            v-model="description"
-          ></textarea>
-        </div>
+          <div class="flex flex-col gap-2">
+            <label for="description">Description de la leçon:</label>
+            <textarea
+              type="text"
+              class="px-3 py-2 rounded-md shadow"
+              id="description"
+              placeholder="Python est très demandé et accessible pour les débutants.."
+              v-model="description"
+            ></textarea>
+          </div>
 
-        <div class="flex flex-col gap-2">
-          <label for="url">Category:</label>
-          <select class="px-3 py-2 rounded bg-white shadow" v-model="category">
-            <option class="bg-slate-100">Javascript</option>
-            <option class="bg-slate-100">PHP</option>
-          </select>
-        </div>
-        <InputList
-          label="objectifs"
-          placeholder="connaître les coordonnées..."
-          v-model="objectifs"
-        ></InputList>
-        <InputList
-          label="prérequis"
-          placeholder="théorème de pythagore"
-          v-model="prerequisites"
-        ></InputList>
+          <div class="flex flex-col gap-2">
+            <label for="url">Category:</label>
+            <select
+              class="px-3 py-2 rounded bg-white shadow"
+              v-model="category"
+            >
+              <option class="bg-slate-100">Javascript</option>
+              <option class="bg-slate-100">PHP</option>
+            </select>
+          </div>
+          <InputList
+            label="objectifs"
+            placeholder="connaître les coordonnées..."
+            v-model="objectifs"
+          ></InputList>
+          <InputList
+            label="prérequis"
+            placeholder="théorème de pythagore"
+            v-model="prerequisites"
+          ></InputList>
+        </section>
 
-        <div class="flex justify-around bottom-8 grow items-end">
+        <section
+          class="lesson-options relative flex flex-col gap-8 grow"
+          v-show="settings == 'media'"
+        >
+          <button
+            @click="isPreview = !isPreview"
+            class="
+              absolute
+              rounded
+              px-3
+              py-2
+              bg-sky-600
+              text-white
+              self-end
+              -pt-2
+            "
+          >
+            Prévisualiser
+          </button>
+          <h3 class="text-xl">Media</h3>
+        </section>
+
+        <div class="flex justify-around">
           <button
             class="
               px-3
@@ -170,7 +216,7 @@
             Publish
           </button>
         </div>
-      </section>
+      </div>
     </div>
   </AdminLayout>
 </template>
@@ -202,6 +248,7 @@ const description = ref();
 const category = ref('Javascript');
 const objectifs = ref([]);
 const prerequisites = ref([]);
+const settings = ref('options');
 
 const title = computed(() => {
   return text.value.split('\n')[0].substring(2);
