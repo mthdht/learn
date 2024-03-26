@@ -203,6 +203,8 @@
             Prévisualiser
           </button>
           <h3 class="text-xl">Media</h3>
+
+          <MediaLibrary />
         </section>
 
         <div class="flex justify-around">
@@ -236,6 +238,7 @@ import { useRouter } from 'vue-router';
 import { ClockIcon, ChartBarIcon } from '@heroicons/vue/24/outline';
 
 import InputList from '@/components/InputList.vue';
+import MediaLibrary from '@/components/MediaLibrary.vue';
 
 import { MdEditor, config, MdPreview, MdCatalog } from 'md-editor-v3';
 import FR_FR from '@vavt/cm-extension/dist/locale/fr-FR';
